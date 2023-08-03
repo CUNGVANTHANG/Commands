@@ -54,7 +54,7 @@ Ví dụ:
 | :--- | :--- |
 | ``mkdir [thư_mục]`` | Tạo 1 thư mục trống |
 | ``mkdir -p [thư_mục_1/thư_mục_2/thư_mục_3]`` | Tạo thư mục 1 chứa thư mục 2, thư mục 2 chứa thư mục 3 |
-| ``rmdir [thư mục]`` | Xóa 1 thư mục trống |
+| ``rmdir [thư mục]/`` | Xóa 1 thư mục trống |
 
 ### 2. Câu lệnh touch
 | Câu lệnh | Tác dụng |
