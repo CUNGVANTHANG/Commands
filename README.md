@@ -19,6 +19,10 @@
     - [2. Câu lệnh mv](#2-câu-lệnh-mv)
     - [3. Câu lệnh rm](#3-câu-lệnh-rm)
     - [4. Câu lệnh rmdir](#4-câu-lệnh-rmdir)
+  - [V. Lệnh sudo, chmod, chown](#v-lệnh-sudo-chmod-chown)
+    - [1. Câu lệnh sudo](#1-câu-lệnh-sudo)
+    - [2. Câu lệnh chmod](#2-câu-lệnh-chmod)
+    - [3. Câu lệnh chown](#3-câu-lệnh-chown)
 - [B. Các lệnh git cơ bản](#b-các-lệnh-git-cơ-bản)
 
 ## A. Các lệnh linux cơ bản
@@ -210,3 +214,46 @@ In ra trên `stout`
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | `rm [tên_thư_mục_trống]` | Xóa thư mục trống |
+
+## V. Lệnh sudo, chmod, chown
+### 1. Câu lệnh sudo
+
+`sudo` cho phép thực hiện các tác vụ yêu cầu quyền quản trị hoặc quyền root
+
+*Ví dụ:*
+
+Tạo file index.js trong home
+```
+touch /home/index.js
+```
+
+Xảy ra lỗi vì không có quyền truy cập
+
+```
+touch: cannot touch '/home/index.js': Permission denied
+```
+
+Cấp quyền truy cập ta sử dụng `sudo`
+
+```
+sudo touch /home/index.js
+```
+
+### 2. Câu lệnh chmod
+`chmod` dùng để thay đổi quyền đối với tệp và thư mục
+
+Quyền sở hữu: 
+1. Chủ sở hữu (**User**)
+2. Nhóm sở hữu (**Group**)
+3. Nhóm còn lại (**Other**)
+
+*Ví dụ:*
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/f79f5f33-744e-456f-8d6b-d19c457b6392" height=250px>
+
+Các thư mục trên đều thuộc quyền của chủ sở hữu `root`
+
+Phân quyền:
+1. Đọc (Read)
+2. Ghi (Write)
+3. 
