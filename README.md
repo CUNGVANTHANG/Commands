@@ -27,9 +27,20 @@
     - [1. Câu lệnh man](#1-câu-lệnh-man)
     - [2. Câu lệnh wget](#2-câu-lệnh-wget)
     - [3. Câu lệnh apt](#3-câu-lệnh-apt)
+  - [VII. Lệnh kill, ping, uname, passwd](#vii-lệnh-kill-ping-uname-passwd)
+    - [1. Câu lệnh kill](#1-câu-lệnh-kill)
+    - [2. Câu lệnh ping](#2-câu-lệnh-ping)
+    - [3. Câu lệnh uname](#3-câu-lệnh-uname)
+    - [4. Câu lệnh passwd](#4-câu-lệnh-passwd)
+  - [VIII. Lệnh top, df, free](#viii-lệnh-top-df-free)
+    - [1. Câu lệnh top](#1-câu-lệnh-top)
+    - [2. Câu lệnh df](#2-câu-lệnh-df)
+    - [3. Câu lệnh free](#3-câu-lệnh-free)
 - [B. Các lệnh git cơ bản](#b-các-lệnh-git-cơ-bản)
 
 ## A. Các lệnh linux cơ bản
+[:arrow_up: Mục lục](#mục-lục)
+
 Tham khảo các lệnh linux phần 1 [tại đây](https://www.hostinger.com/tutorials/linux-commands)
 
 Tham khảo các lệnh linux phần 2 [tại đây](https://linuxapt.com/blog/161-find-out-which-groups-a-user-belongs-to-in-ubuntu-20-04)
@@ -427,3 +438,180 @@ chown root:root index.html
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/511024f8-eed0-412d-bf1b-12ac9d4cf214" height=100px >
 
+## VI. Lệnh man, wget, apt
+### 1. Câu lệnh man
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `man` cung cấp hướng dẫn sử dụng về bất kỳ lệnh hoặc tiện ích nào bạn có thể chạy trong Terminal, bao gồm tên, mô tả và các tùy chọn
+
+**Cú pháp:**
+
+```
+man [command_name]
+```
+
+*Ví dụ: Xem hướng dẫn cách sử dụng lệnh tail*
+
+```
+man tail
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/fe8511da-08e1-483b-bed3-20b6208ce619" height=250px>
+
+### 2. Câu lệnh wget
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `wget` truy xuất các tệp bằng giao thức HTTP, HTTPS và FTP. Dùng để tải xuống thông qua đường dẫn
+
+**Cú pháp:**
+
+```
+wget [option] [url]
+```
+
+**Ví dụ:**
+
+```
+wget https://wordpress.org/latest.zip
+```
+
+### 3. Câu lệnh apt
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `apt` là một công cụ dòng lệnh để xử lý các thư viện Công cụ gói nâng cao (APT) trong Linux. Nó cho phép bạn truy xuất thông tin và các gói từ các nguồn được xác thực để quản lý, cập nhật, xóa và cài đặt phần mềm cũng như các phần phụ thuộc của nó.
+
+**Cú pháp:**
+
+```
+apt [options] (command)
+```
+
+*Ví dụ:**
+
+```
+apt install nodejs
+```
+
+## VII. Lệnh kill, ping, uname, passwd
+### 1. Câu lệnh kill
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `kill` để đóng chương trình không phản hồi theo cách thủ công. Nó sẽ báo hiệu các ứng dụng hoạt động sai và hướng dẫn chúng đóng các tiến trình của chúng.
+
+**Cú pháp:**
+
+```
+kill [signal_option] PID
+```
+
+Sử dụng câu lệnh `ps aux` để lấy PID
+
+```
+ps aux
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/0d8e3da1-4449-44d8-8e88-cd56af8df98d" height=150px>
+
+Muốn đóng chương trình `tail -f index.html` ta sử dụng `kill`
+
+```
+kill 98
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/a357a0f6-c39e-4e0a-84a8-054ccfb3f68e" height=150px>
+
+hoặc sử dụng `kill -9` để đóng hoàn toàn chương trình sử dụng để fix lỗi treo
+
+```kill
+kill -9 98
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/b0414e19-e546-449d-8665-66e45d1ae8cb" height=150px>
+
+### 2. Câu lệnh ping
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `ping` dùng kiểm tra xem mạng hoặc máy chủ có thể truy cập được hay không.
+
+*Ví dụ:*
+
+```
+ping google.com.vn
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/9d722d38-0c40-46c9-9652-8e6aef33b9ff" height=150px>
+
+*Dùng phím tắt `Ctr + C` để tắt*
+
+### 3. Câu lệnh uname
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `uname` in thông tin chi tiết về hệ thống và phần cứng Linux của bạn.
+
+**Cú pháp:**
+
+```
+uname [option]
+```
+
+[option] bao gồm:
+
+- `-a` in tất cả thông tin hệ thống
+- `-s` in ra tên kenel
+- `-n` in tên máy chủ nút của hệ thống
+  
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/3779f62d-76ea-44ee-8dda-9914314e1e99" height=150px>
+
+### 4. Câu lệnh passwd
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `passwd` dùng để đổi mật khẩu
+
+**Cú pháp:**
+
+```
+passwd
+```
+
+## VIII. Lệnh top, df, free
+### 1. Câu lệnh top
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `top` dùng để hiển thị tất cả các tiến trình đang chạy và chế độ xem thời gian thực động của hệ thống hiện tại. Nó tổng hợp việc sử dụng tài nguyên, từ việc sử dụng CPU đến bộ nhớ.
+
+**Cú pháp:**
+
+```
+top
+```
+
+hoặc
+
+```
+htop
+```
+
+### 2. Câu lệnh df
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đĩa của hệ thống, được hiển thị bằng phần trăm và kilobyte (KB)
+
+**Cú pháp:**
+
+```
+df -h
+```
+
+### 3. Câu lệnh free
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `free` dùng để xem RAM và SWAP
+
+**Cú pháp:**
+
+```
+free -h
+```
+
+# B. Các lệnh git cơ bản
+[:arrow_up: Mục lục](#mục-lục)
