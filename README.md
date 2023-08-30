@@ -23,10 +23,17 @@
     - [1. Câu lệnh sudo](#1-câu-lệnh-sudo)
     - [2. Câu lệnh chmod](#2-câu-lệnh-chmod)
     - [3. Câu lệnh chown](#3-câu-lệnh-chown)
+  - [VI. Lệnh man, wget, apt](#vi-lệnh-man-wget-apt)
+    - [1. Câu lệnh man](#1-câu-lệnh-man)
+    - [2. Câu lệnh wget](#2-câu-lệnh-wget)
+    - [3. Câu lệnh apt](#3-câu-lệnh-apt)
 - [B. Các lệnh git cơ bản](#b-các-lệnh-git-cơ-bản)
 
 ## A. Các lệnh linux cơ bản
-Tham khảo các lệnh linux [tại đây](https://www.hostinger.com/tutorials/linux-commands)
+Tham khảo các lệnh linux phần 1 [tại đây](https://www.hostinger.com/tutorials/linux-commands)
+
+Tham khảo các lệnh linux phần 2 [tại đây](https://linuxapt.com/blog/161-find-out-which-groups-a-user-belongs-to-in-ubuntu-20-04)
+
 ## I. Lệnh ls, cd, clear
 ### 1. Câu lệnh ls
 [:arrow_up: Mục lục](#mục-lục)
@@ -217,6 +224,7 @@ In ra trên `stout`
 
 ## V. Lệnh sudo, chmod, chown
 ### 1. Câu lệnh sudo
+[:arrow_up: Mục lục](#mục-lục)
 
 `sudo` cho phép thực hiện các tác vụ yêu cầu quyền quản trị hoặc quyền root
 
@@ -240,6 +248,8 @@ sudo touch /home/index.js
 ```
 
 ### 2. Câu lệnh chmod
+[:arrow_up: Mục lục](#mục-lục)
+
 `chmod` dùng để thay đổi quyền đối với tệp và thư mục
 
 Quyền sở hữu: 
@@ -251,9 +261,169 @@ Quyền sở hữu:
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/f79f5f33-744e-456f-8d6b-d19c457b6392" height=250px>
 
-Các thư mục trên đều thuộc quyền của chủ sở hữu `root`
+Các thư mục trên đều thuộc chủ sở hữu `root`, nhóm sở hữu `root`
 
 Phân quyền:
 1. Đọc (Read)
 2. Ghi (Write)
-3. 
+3. Thực thi (Execute)
+
+*Ví dụ 1:*
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/f79f5f33-744e-456f-8d6b-d19c457b6392" height=250px>
+
+- `drwxr-xr-x` có chữ `d` ở đằng trước nghĩa là thư mục (directory)
+
+- `-rwxrwxrwx` có dấu `-` ở đằng trước nghĩa là file
+
+- `lrwxrwxrwx` có chữ `l` ở đằng trước nghĩa là lối tắt (shortcuts)
+
+*Ví dụ 2:*
+
+```
+drwxr-xr-x
+```
+
+- 3 ký tự đầu tiên `rwx` (Read-Write-Execute) thể hiện quyền hạn cho nhóm User
+
+- 3 ký tự tiếp theo `r-x` (Read-Execute) thể hiện quyền hạn cho nhóm Group
+
+- 3 ký tự cuối cùng `r-x` (Read-Execute) thể hiện quyền hạn cho nhóm Other
+
+**Cú pháp sử dụng `chmod`**
+
+```
+chmod options permissions file name
+```
+
+| Permissions | Quyền sở hữu |
+| :--- | :--- |
+| `u` | User |
+| `g` | Group |
+| `o` | Other |
+| `a` | All |
+
+*Ví dụ 3: Cấp quyền hạn*
+
+```
+chmod u=rwx,g=rx,o=r myfile
+```
+
+Trong đó:
+- `r` (**r**ead)
+- `w` (**w**rite)
+- `x` (e**x**ecute)
+
+*Ví dụ 4: Thêm/Loại bỏ quyền hạn*
+
+```
+chmod u-r myfile
+```
+
+Loại bỏ quyền read của myfile
+
+```
+chmod u+w myfile
+```
+
+Thêm quyền write cho myfile
+
+**Khắc phục lỗi khi ta cấp quyền hạn cho file nằm trong ổ C hoặc D:**
+
+Ta muốn thay đổi quyền hạn file `index.html` nằm trong ổ C nhưng không được
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/71f62958-eb08-4e40-95a0-d5a42fbd7a5f" height=150px>
+
+Khắc phục:
+
+```
+sudo vi /etc/wsl.conf
+```
+
+Bấm phím `I` để chỉnh sửa trong chế độ vi
+
+```
+[automount]
+options = "metadata"
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/8c93119d-6344-4260-ace8-2b3d655155f9" height=150px>
+
+Bấm phím `Esc` gõ `:x` để thoát khỏi chế độ vi
+
+Mở Window PowerShell
+
+```
+wsl --shutdown
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/f4d4891e-3fd4-45aa-aedb-d5640e866280" height=150px >
+
+**Cú pháp sử dụng `chmod` dưới dạng bát phân (0-7)**
+
+| Con số | Ý nghĩa |
+| :--- | :--- |
+| `4` | Read |
+| `2` | Write |
+| `1` | Execute |
+| `0` | No permission |
+
+`4 + 2 + 1 = 7` nên 7 sẽ là Read-Write-Execute
+
+`4 + 2 + 0 = 6` nên 6 sẽ là Read-Write
+
+`0 + 2 + 1 = 3` nên 3 sẽ là Write-Execute
+
+*Ví dụ 5: Sử dụng `chmod` dưới dạng bát phân*
+
+```
+chmod 777 index.html
+```
+
+- Số đầu tiên là `7` nghĩa là User có quyền Read-Write-Execute
+- Số tiếp theo là `7` nghĩa là Group có quyền Read-Write-Execute
+- Số cuối cùng là `7` nghĩa là Other có quyền Read-Write-Execute
+
+*Ví dụ 6:*
+
+```
+chmod 531 index.js
+```
+
+- Số đầu tiên là `5` = `4 + 0 + 1` nghĩa là User có quyền Read-Execute
+- Số tiếp theo là `3` = `0 + 2 + 1` nghĩa là Group có quyền Write-Execute
+- Số cuối cùng là `1 = `0 + 0 + 1` nghĩa là Other có quyền Execute
+
+### 3. Câu lệnh chown
+[:arrow_up: Mục lục](#mục-lục)
+
+`chown` dùng để thay đổi sở hữu
+
+**Cú pháp:**
+
+```
+chown owner[:group] filename
+```
+
+*Ví dụ:*
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/780796cf-35d8-422a-a3d8-13e63f8e9872" height=100px >
+
+File `index.html` đang thuộc sở hữu của User là cungvanthang, Group là cungvanthang
+
+Ta muốn thay đổi quyền sở hữu của User là cungvanthang cho User là root
+
+```
+chown root index.html
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/cce21e38-edb9-48ca-9d89-67a4411b5b44" height=100px >
+
+Ta muốn thay đổi quyền sở hữu của User là cungvanthang cho User là root, Group là cungvangthang cho Group là root
+
+```
+chown root:root index.html
+```
+
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/511024f8-eed0-412d-bf1b-12ac9d4cf214" height=100px >
+
