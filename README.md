@@ -3,8 +3,9 @@
 - [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
   - [I. Lệnh ls, cd, clear](#i-lệnh-ls-cd-clear)
     - [1. Câu lệnh ls](#1-câu-lệnh-ls)
-    - [2. Câu lệnh cd](#2-câu-lệnh-cd)
-    - [3. Câu lệnh clear](#3-câu-lệnh-clear)
+    - [2. Câu lệnh pwd](#2-câu-lệnh-pwd)
+    - [3. Câu lệnh cd](#3-câu-lệnh-cd)
+    - [4. Câu lệnh clear](#4-câu-lệnh-clear)
   - [II. Lệnh mkdir, touch, vi](#ii-lệnh-mkdir-touch-vi)
     - [1. Câu lệnh mkdir](#1-câu-lệnh-mkdir)
     - [2. Câu lệnh touch](#2-câu-lệnh-touch)
@@ -65,7 +66,14 @@ Ví dụ:
 | ``ls -la`` hoặc ``ls -al``| Cho biết nội dung cấp một và thông tin chi tiết về thư mục đang đứng (Bao gồm thư mục ẩn) | 
 | ``ls -R`` | Cho biết nội dung các cấp của thư mục đang đứng (Không bao gồm thư mục ẩn) |
 
-### 2. Câu lệnh cd
+### 2. Câu lệnh pwd
+[:arrow_up: Mục lục](#mục-lục)
+
+| Câu lệnh | Tác dụng |
+| :--- | :--- |
+| `pwd` | Cho biết đường dẫn thư mục hiện tại |
+
+### 3. Câu lệnh cd
 [:arrow_up: Mục lục](#mục-lục)
 
 Ví dụ: 
@@ -84,7 +92,7 @@ Ví dụ:
 | ``cd -`` | Quay trở về thư mục trước đó khi đã di chuyển |
 | ``cd`` | Quay trở về account |
 
-### 3. Câu lệnh clear
+### 4. Câu lệnh clear
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -135,7 +143,7 @@ Ví dụ:
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | `echo 123` | In ra `stout` là 123 |
-| `echo "Hello World!" | In ra `stout` là Hello World!` |
+| `echo "Hello World!"` | In ra `stout` là Hello World!` |
 | `echo "<h1>Hello World</h1>" > [tên_file_mới]` | Ghi đè nội dung vào file mới |
 | `echo "<h1>Hello World</h1>" >> [tên_file_mới]` | Ghi thêm vào nội dung vào file mới 
 
