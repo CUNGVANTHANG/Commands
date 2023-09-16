@@ -1,20 +1,23 @@
 # Commands
 ## Mục lục
 
-| Số thứ tự | Câu lệnh | Tác dụng | |
-| :--- | :--- | :--- | :--- |
-| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | | |
-| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | | |
-| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | | |
-| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | | |
-| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | | |
-| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | | |
-| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | | |
-| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | | |
-| [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | | |
-| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | |
-| [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | |
-| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | |
+| STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | | 
+| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | |
+| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | |
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | |
+| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | |
+| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vi | |
+| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | |
+| [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | |
+| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In stout + Lắng nghe | |
+| [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | | 
+| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy | | 
+| [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | |
+| [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | | 
+| [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | |
 
 
 - [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
@@ -252,7 +255,7 @@ In ra trên `stout`
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
-| `rm [tên_thư_mục_trống]` | Xóa thư mục trống |
+| `rmdir [tên_thư_mục_trống]` | Xóa thư mục trống |
 
 ### 16. Câu lệnh sudo
 [:arrow_up: Mục lục](#mục-lục)
