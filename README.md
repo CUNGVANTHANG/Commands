@@ -1,5 +1,22 @@
 # Commands
 ## Mục lục
+
+| Số thứ tự | Câu lệnh | Tác dụng | |
+| :--- | :--- | :--- | :--- |
+| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | | |
+| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | | |
+| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | | |
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | | |
+| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | | |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | | |
+| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | | |
+| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | | |
+| [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | | |
+| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | |
+| [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | |
+| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | |
+
+
 - [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
   - [I. Lệnh ls, cd, clear](#i-lệnh-ls-cd-clear)
     - [1. Câu lệnh ls](#1-câu-lệnh-ls)
@@ -46,7 +63,6 @@ Tham khảo các lệnh linux phần 1 [tại đây](https://www.hostinger.com/t
 
 Tham khảo các lệnh linux phần 2 [tại đây](https://linuxapt.com/blog/161-find-out-which-groups-a-user-belongs-to-in-ubuntu-20-04)
 
-## I. Lệnh ls, cd, clear
 ### 1. Câu lệnh ls
 [:arrow_up: Mục lục](#mục-lục)
 
@@ -99,8 +115,7 @@ Ví dụ:
 | :--- | :--- |
 | ``clear`` | Dọn sạch màn hình Terminal |
 
-## II. Lệnh mkdir, touch, vi
-### 1. Câu lệnh mkdir
+### 5. Câu lệnh mkdir
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -109,14 +124,14 @@ Ví dụ:
 | ``mkdir -p [thư_mục_1/thư_mục_2/thư_mục_3]`` | Tạo thư mục 1 chứa thư mục 2, thư mục 2 chứa thư mục 3 |
 | ``rmdir [thư mục]/`` | Xóa 1 thư mục trống |
 
-### 2. Câu lệnh touch
+### 6. Câu lệnh touch
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | ``touch [tên_file]`` | Tạo 1 file trống |
 
-### 3. Câu lệnh vi
+### 7. Câu lệnh vi
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -125,8 +140,7 @@ Ví dụ:
 
 :arrow_right:Truy cập vào đây: [Làm việc với Vim](https://itplusx.info/su-dung-vim-co-ban-toi-nang-cao/)
 
-## III. Lệnh cat, echo, tail, grep
-### 1. Câu lệnh cat
+### 8. Câu lệnh cat
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -137,7 +151,7 @@ Ví dụ:
 
 *Chú ý*: Thực hiện 1 câu lệnh, nội dung in ra trực tiếp trên terminal. Người ra gọi là in ra đầu ra tiêu chuẩn là `stout` 
 
-### 2. Câu lệnh echo
+### 9. Câu lệnh echo
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -151,7 +165,7 @@ Ví dụ:
 
 `[tên_file_mới]` : `index.html`
 
-### 3. Câu lệnh tail
+### 10. Câu lệnh tail
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -167,7 +181,7 @@ Ví dụ:
 
 `[tên_file]` : `index.html`
 
-### 4. Câu lệnh grep
+### 11. Câu lệnh grep
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `grep` dùng để tìm kiếm 
@@ -181,8 +195,7 @@ In ra trên `stout`
 
 - Tham khảo `grep` [tại đây](https://viblo.asia/p/tim-hieu-ve-lenh-grep-trong-linux-DZrGNNDdGVB)
 
-## IV. Lệnh cp, mv, rm, rmdir
-### 1. Câu lệnh cp
+### 12. Câu lệnh cp
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -200,7 +213,7 @@ In ra trên `stout`
 
 `[đường_dẫn_file_mới]` : `Download/index.html`
 
-### 2. Câu lệnh mv
+### 13. Câu lệnh mv
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -218,7 +231,7 @@ In ra trên `stout`
 
 `[đường_dẫn_thư_mục_mới]` : `Download/Folder2`
 
-### 3. Câu lệnh rm
+### 14. Câu lệnh rm
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
@@ -234,15 +247,14 @@ In ra trên `stout`
 
 `[đường_dẫn_file]` : `Download/index.html`
 
-### 4. Câu lệnh rmdir
+### 15. Câu lệnh rmdir
 [:arrow_up: Mục lục](#mục-lục)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | `rm [tên_thư_mục_trống]` | Xóa thư mục trống |
 
-## V. Lệnh sudo, chmod, chown
-### 1. Câu lệnh sudo
+### 16. Câu lệnh sudo
 [:arrow_up: Mục lục](#mục-lục)
 
 `sudo` cho phép thực hiện các tác vụ yêu cầu quyền quản trị hoặc quyền root
@@ -266,7 +278,7 @@ Cấp quyền truy cập ta sử dụng `sudo`
 sudo touch /home/index.js
 ```
 
-### 2. Câu lệnh chmod
+### 17. Câu lệnh chmod
 [:arrow_up: Mục lục](#mục-lục)
 
 `chmod` dùng để thay đổi quyền đối với tệp và thư mục
@@ -413,7 +425,7 @@ chmod 531 index.js
 - Số tiếp theo là `3` = `0 + 2 + 1` nghĩa là Group có quyền Write-Execute
 - Số cuối cùng là `1 = `0 + 0 + 1` nghĩa là Other có quyền Execute
 
-### 3. Câu lệnh chown
+### 18. Câu lệnh chown
 [:arrow_up: Mục lục](#mục-lục)
 
 `chown` dùng để thay đổi sở hữu
@@ -446,8 +458,7 @@ chown root:root index.html
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/511024f8-eed0-412d-bf1b-12ac9d4cf214" height=100px >
 
-## VI. Lệnh man, wget, apt
-### 1. Câu lệnh man
+### 19. Câu lệnh man
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `man` cung cấp hướng dẫn sử dụng về bất kỳ lệnh hoặc tiện ích nào bạn có thể chạy trong Terminal, bao gồm tên, mô tả và các tùy chọn
@@ -466,7 +477,7 @@ man tail
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/fe8511da-08e1-483b-bed3-20b6208ce619" height=250px>
 
-### 2. Câu lệnh wget
+### 20. Câu lệnh wget
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `wget` truy xuất các tệp bằng giao thức HTTP, HTTPS và FTP. Dùng để tải xuống thông qua đường dẫn
@@ -483,7 +494,7 @@ wget [option] [url]
 wget https://wordpress.org/latest.zip
 ```
 
-### 3. Câu lệnh apt
+### 21. Câu lệnh apt
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `apt` là một công cụ dòng lệnh để xử lý các thư viện Công cụ gói nâng cao (APT) trong Linux. Nó cho phép bạn truy xuất thông tin và các gói từ các nguồn được xác thực để quản lý, cập nhật, xóa và cài đặt phần mềm cũng như các phần phụ thuộc của nó.
@@ -500,8 +511,7 @@ apt [options] (command)
 apt install nodejs
 ```
 
-## VII. Lệnh kill, ping, uname, passwd
-### 1. Câu lệnh kill
+### 22. Câu lệnh kill
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `kill` để đóng chương trình không phản hồi theo cách thủ công. Nó sẽ báo hiệu các ứng dụng hoạt động sai và hướng dẫn chúng đóng các tiến trình của chúng.
@@ -536,7 +546,7 @@ kill -9 98
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/b0414e19-e546-449d-8665-66e45d1ae8cb" height=150px>
 
-### 2. Câu lệnh ping
+### 23. Câu lệnh ping
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `ping` dùng kiểm tra xem mạng hoặc máy chủ có thể truy cập được hay không.
@@ -551,7 +561,7 @@ ping google.com.vn
 
 *Dùng phím tắt `Ctr + C` để tắt*
 
-### 3. Câu lệnh uname
+### 24. Câu lệnh uname
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `uname` in thông tin chi tiết về hệ thống và phần cứng Linux của bạn.
@@ -570,7 +580,7 @@ uname [option]
   
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/3779f62d-76ea-44ee-8dda-9914314e1e99" height=150px>
 
-### 4. Câu lệnh passwd
+### 25. Câu lệnh passwd
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `passwd` dùng để đổi mật khẩu
@@ -581,8 +591,7 @@ Câu lệnh `passwd` dùng để đổi mật khẩu
 passwd
 ```
 
-## VIII. Lệnh top, df, free
-### 1. Câu lệnh top
+### 26. Câu lệnh top
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `top` dùng để hiển thị tất cả các tiến trình đang chạy và chế độ xem thời gian thực động của hệ thống hiện tại. Nó tổng hợp việc sử dụng tài nguyên, từ việc sử dụng CPU đến bộ nhớ.
@@ -599,7 +608,7 @@ hoặc
 htop
 ```
 
-### 2. Câu lệnh df
+### 27. Câu lệnh df
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đĩa của hệ thống, được hiển thị bằng phần trăm và kilobyte (KB)
@@ -610,7 +619,7 @@ Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đ
 df -h
 ```
 
-### 3. Câu lệnh free
+### 28. Câu lệnh free
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `free` dùng để xem RAM và SWAP
