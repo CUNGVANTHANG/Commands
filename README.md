@@ -2,19 +2,19 @@
 ## Mục lục
 
 | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | | 
-| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | |
-| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | |
-| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | |
-| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | |
-| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | |
-| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vi | |
-| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) |  |
+| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | |
+| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | |
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | |
+| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | |
+| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vi | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | |
+| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | |
 | [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | |
 | [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In stout + Lắng nghe | |
 | [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | | 
-| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy | | 
+| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | | 
 | [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | |
 | [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | | 
 | [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | |
@@ -514,7 +514,9 @@ apt [options] (command)
 apt install nodejs
 ```
 
-### 22. Câu lệnh kill
+### 22. Câu lệnh ps
+
+### 23. Câu lệnh kill
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `kill` để đóng chương trình không phản hồi theo cách thủ công. Nó sẽ báo hiệu các ứng dụng hoạt động sai và hướng dẫn chúng đóng các tiến trình của chúng.
@@ -549,7 +551,7 @@ kill -9 98
 
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/b0414e19-e546-449d-8665-66e45d1ae8cb" height=150px>
 
-### 23. Câu lệnh ping
+### 24. Câu lệnh ping
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `ping` dùng kiểm tra xem mạng hoặc máy chủ có thể truy cập được hay không.
@@ -564,7 +566,7 @@ ping google.com.vn
 
 *Dùng phím tắt `Ctr + C` để tắt*
 
-### 24. Câu lệnh uname
+### 25. Câu lệnh uname
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `uname` in thông tin chi tiết về hệ thống và phần cứng Linux của bạn.
@@ -583,7 +585,7 @@ uname [option]
   
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/3779f62d-76ea-44ee-8dda-9914314e1e99" height=150px>
 
-### 25. Câu lệnh passwd
+### 26. Câu lệnh passwd
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `passwd` dùng để đổi mật khẩu
@@ -594,7 +596,7 @@ Câu lệnh `passwd` dùng để đổi mật khẩu
 passwd
 ```
 
-### 26. Câu lệnh top
+### 27. Câu lệnh top
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `top` dùng để hiển thị tất cả các tiến trình đang chạy và chế độ xem thời gian thực động của hệ thống hiện tại. Nó tổng hợp việc sử dụng tài nguyên, từ việc sử dụng CPU đến bộ nhớ.
@@ -611,7 +613,7 @@ hoặc
 htop
 ```
 
-### 27. Câu lệnh df
+### 28. Câu lệnh df
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đĩa của hệ thống, được hiển thị bằng phần trăm và kilobyte (KB)
@@ -622,7 +624,7 @@ Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đ
 df -h
 ```
 
-### 28. Câu lệnh free
+### 29. Câu lệnh free
 [:arrow_up: Mục lục](#mục-lục)
 
 Câu lệnh `free` dùng để xem RAM và SWAP
