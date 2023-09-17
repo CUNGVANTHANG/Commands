@@ -1,63 +1,27 @@
 # Commands
 ## Mục lục
 
-| STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) |  |
-| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | |
-| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | |
-| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | |
-| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | |
-| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | |
-| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vi | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | |
-| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | |
-| [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | |
-| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In stout + Lắng nghe | |
-| [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | | 
-| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | | 
-| [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | |
-| [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | | 
-| [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | |
-
-
 - [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
-  - [I. Lệnh ls, cd, clear](#i-lệnh-ls-cd-clear)
-    - [1. Câu lệnh ls](#1-câu-lệnh-ls)
-    - [2. Câu lệnh pwd](#2-câu-lệnh-pwd)
-    - [3. Câu lệnh cd](#3-câu-lệnh-cd)
-    - [4. Câu lệnh clear](#4-câu-lệnh-clear)
-  - [II. Lệnh mkdir, touch, vi](#ii-lệnh-mkdir-touch-vi)
-    - [1. Câu lệnh mkdir](#1-câu-lệnh-mkdir)
-    - [2. Câu lệnh touch](#2-câu-lệnh-touch)
-    - [3. Câu lệnh vi](#3-câu-lệnh-vi)
-  - [III. Lệnh cat, echo, tail, grep](#iii-lệnh-cat-echo-tail-grep)
-    - [1. Câu lệnh cat](#1-câu-lệnh-cat)
-    - [2. Câu lệnh echo](#2-câu-lệnh-echo)
-    - [3. Câu lệnh tail](#3-câu-lệnh-tail)
-    - [4. Câu lệnh grep](#4-câu-lệnh-grep)
-  - [IV. Lệnh cp, mv, rm, rmdir](#iv-lệnh-cp-mv-rm-rmdir)
-    - [1. Câu lệnh cp](#1-câu-lệnh-cp)
-    - [2. Câu lệnh mv](#2-câu-lệnh-mv)
-    - [3. Câu lệnh rm](#3-câu-lệnh-rm)
-    - [4. Câu lệnh rmdir](#4-câu-lệnh-rmdir)
-  - [V. Lệnh sudo, chmod, chown](#v-lệnh-sudo-chmod-chown)
-    - [1. Câu lệnh sudo](#1-câu-lệnh-sudo)
-    - [2. Câu lệnh chmod](#2-câu-lệnh-chmod)
-    - [3. Câu lệnh chown](#3-câu-lệnh-chown)
-  - [VI. Lệnh man, wget, apt](#vi-lệnh-man-wget-apt)
-    - [1. Câu lệnh man](#1-câu-lệnh-man)
-    - [2. Câu lệnh wget](#2-câu-lệnh-wget)
-    - [3. Câu lệnh apt](#3-câu-lệnh-apt)
-  - [VII. Lệnh kill, ping, uname, passwd](#vii-lệnh-kill-ping-uname-passwd)
-    - [1. Câu lệnh kill](#1-câu-lệnh-kill)
-    - [2. Câu lệnh ping](#2-câu-lệnh-ping)
-    - [3. Câu lệnh uname](#3-câu-lệnh-uname)
-    - [4. Câu lệnh passwd](#4-câu-lệnh-passwd)
-  - [VIII. Lệnh top, df, free](#viii-lệnh-top-df-free)
-    - [1. Câu lệnh top](#1-câu-lệnh-top)
-    - [2. Câu lệnh df](#2-câu-lệnh-df)
-    - [3. Câu lệnh free](#3-câu-lệnh-free)
-- [B. Các lệnh git cơ bản](#b-các-lệnh-git-cơ-bản)
+
+| STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) | Quyền quản trị | [31](#31-câu-lệnh-wc) | [`wc`](#31-câu-lệnh-wc) | Đếm |
+| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | Thay đổi quyền |
+| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu |
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help |
+| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói |
+| [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
+| [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | Đóng chương trình |
+| [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | [24](#24-câu-lệnh-ping) | [`ping`](#24-câu-lệnh-ping) | Kiểm tra mạng |
+| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In stout + Lắng nghe | [25](#25-câu-lệnh-uname) | [`uname`](#25-câu-lệnh-uname) | Thông tin hệ thống |
+| [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | [26](#26-câu-lệnh-passwd) | [`passwd`](#26-câu-lệnh-passwd) | Đổi mật khẩu |
+| [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | [27](#27-câu-lệnh-top) | [`top`](#27-câu-lệnh-top) | Hiển thị tiến trình chạy |
+| [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | [28](#28-câu-lệnh-df) | [`df`](#28-câu-lệnh-df) | Hiển thị dung lượng |
+| [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | [29](#29-câu-lệnh-free) | [`free`](#29-câu-lệnh-free) | Hiển thị RAM/SWAP |
+| [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình
+
+- [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
 
 ## A. Các lệnh linux cơ bản
 [:arrow_up: Mục lục](#mục-lục)
@@ -515,6 +479,9 @@ apt install nodejs
 ```
 
 ### 22. Câu lệnh ps
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `ps aux` để lấy PID và hiện các tiến trình đang chạy
 
 ### 23. Câu lệnh kill
 [:arrow_up: Mục lục](#mục-lục)
@@ -634,6 +601,22 @@ Câu lệnh `free` dùng để xem RAM và SWAP
 ```
 free -h
 ```
+
+### 30. Câu lệnh pstree
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `pstree` dùng để hiển thị cây tiến trình
+
+**Cú pháp:**
+
+```
+pstree
+```
+
+### 31. Câu lệnh wc
+[:arrow_up: Mục lục](#mục-lục)
+
+Câu lệnh `wc` dùng để đếm từ/ký tự...
 
 # B. Các lệnh git cơ bản
 [:arrow_up: Mục lục](#mục-lục)
