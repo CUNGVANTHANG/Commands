@@ -23,6 +23,7 @@
 
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
 
+
 ## A. Các lệnh linux cơ bản
 [:arrow_up: Mục lục](#mục-lục)
 
@@ -618,5 +619,199 @@ pstree
 
 Câu lệnh `wc` dùng để đếm từ/ký tự...
 
-# B. Các lệnh git cơ bản
+## B. Các lệnh git cơ bản
 [:arrow_up: Mục lục](#mục-lục)
+### 1. Trích dẫn
+[:arrow_up: Mục lục](#mục-lục)
+
+| Siêu ký tự | Ý nghĩa |
+| :---: | :---: |
+| `;` | Phân tách lệnh |
+| `&` | Tiến trình nền |
+| `()` | Nhóm lệnh, tạo subshell |
+| `{}` | Nhóm lệnh, không tạo subshell |
+| `|` | Đường ống |
+| `<` | Định hướng lại lối vào | 
+| `>` | Định hướng lại lối ra |
+| `newline` | Lệnh chấm dứt |
+| space/tab | Dấu phân cách trường (word) |
+| `$` | Ký tự thay biến |
+| `*[1?` | Siêu ký tự shell để mở rộng tên tệp |
+| `#` | Chú thích |
+
+**1. Dấu gạch chéo**
+
+Để trích dẫn (hoặc thoát) một ký tự duy nhất khỏi diễn giải. Dấu gạch chéo không được diễn giải nếu được đặt trong dấu nháy đơn và nó bảo vệ ký hiệu đôla ($), dấu backquote (` `)
+
+*Ví dụ:*
+
+```
+$ echo Where are you going\?
+Where are you going?
+$ echo Start on this line and \ > go to the next line.
+Start on this line and go to the next line.
+$ echo \\
+\
+S echo ‘\\’
+\\
+$ echo ' \$5.00’
+\$5.00
+$ echo "\SS.00"
+$5.00
+```
+
+**2. Dấu nháy đơn**
+
+Các dấu nháy đơn phải được khớp với nhau. Chúng bảo vệ các siêu kí tự khỏi việc diễn giải. Để in một dấu nháy đơn, nó phải được đặt trong dấu nháy kép hoặc thoát
+ra bằng dấu gạch chéo\
+
+*Ví dụ:*
+
+```
+$ echo 'Don\'t you need $5.00?’
+Don't you need $5.00?
+```
+
+**3. Dấu nháy kép**
+
+Dấu nháy kép phải được khớp với nhau, sẽ cho phép thay thế biến và lệnh, đồng thời bảo vệ mọi siêu ký tự đặc biệt khác không bị shell thông dịch.
+
+*Ví dụ:*
+
+```
+$ name=qtuan
+$ echo "Hi $name, I'm glad to meet you!"
+Hi qtuan, I'm glad to meet you
+```
+
+### 2. Biến
+[:arrow_up: Mục lục](#mục-lục)
+
+Các loại biến:
+
+1. Biến môi trường (Biến toàn cục)
+2. Biến người dùng (Biến cục bộ)
+3. Biến tự động
+
+**1. Biến môi trường (Biến toàn cục)**
+
+Cách tạo biến môi trường:
+
+```
+export <tên biến không có $> = <giá trị biến>
+```
+
+*Ví dụ:*
+
+```
+export MYNAME="Tux Linux"
+```
+
+**2. Biến người dùng (Biến cục bộ)**
+
+Cách tạo biến người dùng:
+
+```
+biến = giá trị
+```
+
+hoặc 
+
+```
+set biến = giá trị
+```
+
+Hủy biến:
+
+```
+unset biến
+```
+
+**3. Biến tự động**
+
+Là các biến do hệ thống tự động tạo ra. Biến tự động là biến chỉ đọc, tức là chúng ta chỉ được đọc giá trị của biến tự động và không được gán giá trị cho biến tự động
+
+Biến tự động: 
+
+```
+$1, $2, $3, $4, $5, $6, $7, $8, $9
+```
+
+*Ví dụ:*
+
+```
+set word1 word2 word3
+echo $1 $2 $3
+#word1 word2 word3
+```
+
+Khi ta có hơn 10 tham số dòng lệnh: Sử dụng `shift` để lấy các tham số từ 10 trở lên
+
+Cú pháp: 
+
+```
+shift [<số nguyên từ 1..9>]
+```
+
+*Ví dụ:*
+
+```
+set apples peaches plums #Trong đó $1 = apples, $2 = peachs, $3 = plums
+shift
+echo $1 #peaches - Đã bị thay đổi giá trị $1 = $2
+echo $2 #plums - Đã bị thay đổi giá trị $2 = $3
+```
+
+### 3. Các phép toán
+[:arrow_up: Mục lục](#mục-lục)
+
+**1. Các phép toán số học** 
+
+Bao gồm có: cộng (+), trừ (-), nhân (*), chia (/), mod (%)
+
+Tính toán trên shell:
+
+```
+expr <biểu thức>
+```
+
+*Ví dụ:*
+
+```
+expr 1 + 4
+# 5
+expr 1+4
+# 1+4
+expr 5 + 9/3
+# 8
+```
+
+**2. Phép toán kiểm tra xâu**
+
+| Phép toán | Ý nghĩa |
+| :---: | :---: |
+| `string1 = string2` | Xâu1 bằng xâu2 ( có khoảng tróng quang dấu =) |
+| `stringl != string2` | Xâu1 khác xâu2 |
+| `string` | Xâu not null |
+| `-z string` | Độ dài xâu zero |
+| `-n string` | Độ dài xâu nonzero |
+
+**3. Phép toán kiểm tra số nguyên**
+
+| Phép toán | Ý nghĩa |
+| :---: | :---: |
+| `intl -eq int2` | intl = int2 |
+| `intl -ne int2` | intl != int2 |
+| `intl -gt int2` | intl > int2 |
+| `intl -ge int2` | intl >= int2 |
+| `intl -It int2` | intl < int2 |
+| `intl -le int2` | intl =< int2 |
+
+**4. Phép toán kiểm tra logic**
+
+| Phép toán | Ý nghĩa |
+| :---: | :---: |
+| `exprl1 -a expr2` | AND |
+| `expr1 -o expr2` | OR |
+| `!expr` | NOT |
+
