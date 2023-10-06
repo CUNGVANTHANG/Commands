@@ -6,8 +6,8 @@
 | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) | Quyền quản trị | [31](#31-câu-lệnh-wc) | [`wc`](#31-câu-lệnh-wc) | Đếm |
-| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | Thay đổi quyền |
-| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu |
+| [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | Thay đổi quyền | [32](#32-câu-lệnh-cal) | [`cal`](#32-câu-lệnh-cal) | Lịch |
+| [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu | [33](#33-câu-lệnh-who) | [`who`](#33-câu-lệnh-who) | Thông tin máy chủ |
 | [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help |
 | [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống |
 | [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói |
@@ -22,7 +22,9 @@
 | [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình
 
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
-
+  - [1. Trích dẫn](#1-trích-dẫn)
+  - [2. Biến](#2-biến)
+  - [3. Các phép toán](#3-các-phép-toán)
 
 ## A. Các lệnh linux cơ bản
 [:arrow_up: Mục lục](#mục-lục)
@@ -619,6 +621,54 @@ pstree
 
 Câu lệnh `wc` dùng để đếm từ/ký tự...
 
+Cú pháp: 
+
+```
+wc [OPTION] [FILE]
+```
+
+Options hay dùng:
+
+```
+wc -c file      #In ra số byte
+wc -m file      #In ra số char
+wc -l file      #In ra số dòng
+wc -w file      #In ra số từ
+```
+
+*Ví dụ:*
+
+```
+wc /home/qtuan
+# 32     37     1179 /home/qtuan
+  |      |      |
+record  word    char
+```
+
+### 32. Câu lệnh cal
+[:arrow_up: Mục lục](#mục-lục)
+
+Cài gói `sudo apt install ncal`
+
+Cú pháp:
+
+```
+cal -m [Month] [Year]   #In ra tháng trong năm
+cal -y [Year]           #In ra năm
+cal -3                  #In ra 3 tháng gần nhất
+```
+
+### 33. Câu lệnh who
+[:arrow_up: Mục lục](#mục-lục)
+
+Lệnh `who` trả về tên người dùng, ngày, giờ và thông tin máy chủ
+
+Cú pháp:
+
+```
+who
+```
+
 ## B. Các lệnh git cơ bản
 [:arrow_up: Mục lục](#mục-lục)
 ### 1. Trích dẫn
@@ -663,7 +713,7 @@ $5.00
 **2. Dấu nháy đơn**
 
 Các dấu nháy đơn phải được khớp với nhau. Chúng bảo vệ các siêu kí tự khỏi việc diễn giải. Để in một dấu nháy đơn, nó phải được đặt trong dấu nháy kép hoặc thoát
-ra bằng dấu gạch chéo\
+ra bằng dấu gạch chéo `\`
 
 *Ví dụ:*
 
@@ -743,6 +793,36 @@ $1, $2, $3, $4, $5, $6, $7, $8, $9
 set word1 word2 word3
 echo $1 $2 $3
 #word1 word2 word3
+```
+
+Biến tự động:
+
+```
+$*      # Danh sách các thông số là toàn bộ các tham số dòng lệnh được ghép thành 1 xâu
+$#      # Số lượng các thông số - chứa tổng số các tham số dòng lệnh không tính $0
+$$      # Tên tiến trình đính kèm
+$@      # Danh sách tham số
+$?      # Mã trở lại của lệnh thực hiện cuối cùng chứa giá trị kết quả trả lại của câu lệnh trước
+$!      # Tên của tiến trình được đưa ra sau cùng
+```
+
+*Ví dụ:*
+
+```
+# Đầu tiên sét tham số cho $1 $2 $3 $4 $5 $6 $7 $8
+set 11 22 33 44 55 66 77 88
+
+echo $*
+# In ra tất cả tham số: 11 22 33 44 55 66 77 88
+
+echo $#
+# In ra số lượng tham số: 8
+
+echo $$
+# In ra tên tiến trình: 6777
+
+echo $@
+# In ra tất cả tham số: 11 22 33 44 55 66 77 88
 ```
 
 Khi ta có hơn 10 tham số dòng lệnh: Sử dụng `shift` để lấy các tham số từ 10 trở lên
