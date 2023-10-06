@@ -804,7 +804,7 @@ expr 5 + 9/3
 | `intl -ne int2` | intl != int2 |
 | `intl -gt int2` | intl > int2 |
 | `intl -ge int2` | intl >= int2 |
-| `intl -It int2` | intl < int2 |
+| `intl -lt int2` | intl < int2 |
 | `intl -le int2` | intl =< int2 |
 
 **4. Phép toán kiểm tra logic**
