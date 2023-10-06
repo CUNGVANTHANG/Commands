@@ -21,6 +21,7 @@
 | [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | [29](#29-câu-lệnh-free) | [`free`](#29-câu-lệnh-free) | Hiển thị RAM/SWAP |
 | [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình
 
+## Mục lục B
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
   - [1. Trích dẫn](#1-trích-dẫn)
   - [2. Biến](#2-biến)
@@ -672,9 +673,9 @@ who
 ```
 
 ## B. Các lệnh linux nâng cao
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-b)
 ### 1. Trích dẫn
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-b)
 
 | Siêu ký tự | Ý nghĩa |
 | :---: | :---: |
@@ -737,7 +738,7 @@ Hi qtuan, I'm glad to meet you
 ```
 
 ### 2. Biến
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-b)
 
 Các loại biến:
 
@@ -845,7 +846,7 @@ echo $2 #plums - Đã bị thay đổi giá trị $2 = $3
 ```
 
 ### 3. Các phép toán
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-b)
 
 **1. Các phép toán số học** 
 
