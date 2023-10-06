@@ -1,5 +1,5 @@
 # Commands
-## Mục lục
+## Mục lục A
 
 - [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
 
@@ -31,14 +31,14 @@
 - [C. Các lệnh git](#c-các-lệnh-git)
 
 ## A. Các lệnh linux cơ bản
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Tham khảo các lệnh linux phần 1 [tại đây](https://www.hostinger.com/tutorials/linux-commands)
 
 Tham khảo các lệnh linux phần 2 [tại đây](https://linuxapt.com/blog/161-find-out-which-groups-a-user-belongs-to-in-ubuntu-20-04)
 
 ### 1. Câu lệnh ls
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Ví dụ: 
 
@@ -57,14 +57,14 @@ Ví dụ:
 | ``ls -R`` | Cho biết nội dung các cấp của thư mục đang đứng (Không bao gồm thư mục ẩn) |
 
 ### 2. Câu lệnh pwd
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | `pwd` | Cho biết đường dẫn thư mục hiện tại |
 
 ### 3. Câu lệnh cd
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Ví dụ: 
 
@@ -83,14 +83,14 @@ Ví dụ:
 | ``cd`` | Quay trở về account |
 
 ### 4. Câu lệnh clear
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | ``clear`` | Dọn sạch màn hình Terminal |
 
 ### 5. Câu lệnh mkdir
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -99,14 +99,14 @@ Ví dụ:
 | ``rmdir [thư mục]/`` | Xóa 1 thư mục trống |
 
 ### 6. Câu lệnh touch
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | ``touch [tên_file]`` | Tạo 1 file trống |
 
 ### 7. Câu lệnh vi
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -115,7 +115,7 @@ Ví dụ:
 :arrow_right:Truy cập vào đây: [Làm việc với Vim](https://itplusx.info/su-dung-vim-co-ban-toi-nang-cao/)
 
 ### 8. Câu lệnh cat
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -126,7 +126,7 @@ Ví dụ:
 *Chú ý*: Thực hiện 1 câu lệnh, nội dung in ra trực tiếp trên terminal. Người ra gọi là in ra đầu ra tiêu chuẩn là `stout` 
 
 ### 9. Câu lệnh echo
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -140,7 +140,7 @@ Ví dụ:
 `[tên_file_mới]` : `index.html`
 
 ### 10. Câu lệnh tail
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -156,7 +156,7 @@ Ví dụ:
 `[tên_file]` : `index.html`
 
 ### 11. Câu lệnh grep
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `grep` dùng để tìm kiếm 
 
@@ -170,7 +170,7 @@ In ra trên `stout`
 - Tham khảo `grep` [tại đây](https://viblo.asia/p/tim-hieu-ve-lenh-grep-trong-linux-DZrGNNDdGVB)
 
 ### 12. Câu lệnh cp
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -188,7 +188,7 @@ In ra trên `stout`
 `[đường_dẫn_file_mới]` : `Download/index.html`
 
 ### 13. Câu lệnh mv
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -206,7 +206,7 @@ In ra trên `stout`
 `[đường_dẫn_thư_mục_mới]` : `Download/Folder2`
 
 ### 14. Câu lệnh rm
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
@@ -222,14 +222,14 @@ In ra trên `stout`
 `[đường_dẫn_file]` : `Download/index.html`
 
 ### 15. Câu lệnh rmdir
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 | Câu lệnh | Tác dụng |
 | :--- | :--- |
 | `rmdir [tên_thư_mục_trống]` | Xóa thư mục trống |
 
 ### 16. Câu lệnh sudo
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 `sudo` cho phép thực hiện các tác vụ yêu cầu quyền quản trị hoặc quyền root
 
@@ -253,7 +253,7 @@ sudo touch /home/index.js
 ```
 
 ### 17. Câu lệnh chmod
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 `chmod` dùng để thay đổi quyền đối với tệp và thư mục
 
@@ -400,7 +400,7 @@ chmod 531 index.js
 - Số cuối cùng là `1 = `0 + 0 + 1` nghĩa là Other có quyền Execute
 
 ### 18. Câu lệnh chown
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 `chown` dùng để thay đổi sở hữu
 
@@ -433,7 +433,7 @@ chown root:root index.html
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/511024f8-eed0-412d-bf1b-12ac9d4cf214" height=100px >
 
 ### 19. Câu lệnh man
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `man` cung cấp hướng dẫn sử dụng về bất kỳ lệnh hoặc tiện ích nào bạn có thể chạy trong Terminal, bao gồm tên, mô tả và các tùy chọn
 
@@ -452,7 +452,7 @@ man tail
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/fe8511da-08e1-483b-bed3-20b6208ce619" height=250px>
 
 ### 20. Câu lệnh wget
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `wget` truy xuất các tệp bằng giao thức HTTP, HTTPS và FTP. Dùng để tải xuống thông qua đường dẫn
 
@@ -469,7 +469,7 @@ wget https://wordpress.org/latest.zip
 ```
 
 ### 21. Câu lệnh apt
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `apt` là một công cụ dòng lệnh để xử lý các thư viện Công cụ gói nâng cao (APT) trong Linux. Nó cho phép bạn truy xuất thông tin và các gói từ các nguồn được xác thực để quản lý, cập nhật, xóa và cài đặt phần mềm cũng như các phần phụ thuộc của nó.
 
@@ -486,12 +486,12 @@ apt install nodejs
 ```
 
 ### 22. Câu lệnh ps
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `ps aux` để lấy PID và hiện các tiến trình đang chạy
 
 ### 23. Câu lệnh kill
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `kill` để đóng chương trình không phản hồi theo cách thủ công. Nó sẽ báo hiệu các ứng dụng hoạt động sai và hướng dẫn chúng đóng các tiến trình của chúng.
 
@@ -526,7 +526,7 @@ kill -9 98
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/b0414e19-e546-449d-8665-66e45d1ae8cb" height=150px>
 
 ### 24. Câu lệnh ping
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `ping` dùng kiểm tra xem mạng hoặc máy chủ có thể truy cập được hay không.
 
@@ -541,7 +541,7 @@ ping google.com.vn
 *Dùng phím tắt `Ctr + C` để tắt*
 
 ### 25. Câu lệnh uname
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `uname` in thông tin chi tiết về hệ thống và phần cứng Linux của bạn.
 
@@ -560,7 +560,7 @@ uname [option]
 <img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/3779f62d-76ea-44ee-8dda-9914314e1e99" height=150px>
 
 ### 26. Câu lệnh passwd
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `passwd` dùng để đổi mật khẩu
 
@@ -571,7 +571,7 @@ passwd
 ```
 
 ### 27. Câu lệnh top
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `top` dùng để hiển thị tất cả các tiến trình đang chạy và chế độ xem thời gian thực động của hệ thống hiện tại. Nó tổng hợp việc sử dụng tài nguyên, từ việc sử dụng CPU đến bộ nhớ.
 
@@ -588,7 +588,7 @@ htop
 ```
 
 ### 28. Câu lệnh df
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `df` dùng để hiện thị mức sử dụng dung lượng ổ đĩa của hệ thống, được hiển thị bằng phần trăm và kilobyte (KB)
 
@@ -599,7 +599,7 @@ df -h
 ```
 
 ### 29. Câu lệnh free
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `free` dùng để xem RAM và SWAP
 
@@ -610,7 +610,7 @@ free -h
 ```
 
 ### 30. Câu lệnh pstree
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `pstree` dùng để hiển thị cây tiến trình
 
@@ -621,7 +621,7 @@ pstree
 ```
 
 ### 31. Câu lệnh wc
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Câu lệnh `wc` dùng để đếm từ/ký tự...
 
@@ -650,7 +650,7 @@ record  word    char
 ```
 
 ### 32. Câu lệnh cal
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Cài gói `sudo apt install ncal`
 
@@ -663,7 +663,7 @@ cal -3                  #In ra 3 tháng gần nhất
 ```
 
 ### 33. Câu lệnh who
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-a)
 
 Lệnh `who` trả về tên người dùng, ngày, giờ và thông tin máy chủ
 
