@@ -781,6 +781,29 @@ Hủy biến:
 unset biến
 ```
 
+**Modify biến**
+
+*Ví dụ: `fruit` là 1 biến lưu giá trị `'peach'`, `apple` là 1 biến rỗng
+
+```
+${variable:-word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/e16b89af-a902-4e7b-89ac-8b35cc3a57be)
+
+```
+${variable:=word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/7209473d-8f44-4ff4-806f-e834d3c87f75)
+
+```
+${variable:+word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không thì rỗng.
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/5cb0d20c-1803-4769-af49-1b14b4e62514)
+
+
 **3. Biến tự động**
 
 Là các biến do hệ thống tự động tạo ra. Biến tự động là biến chỉ đọc, tức là chúng ta chỉ được đọc giá trị của biến tự động và không được gán giá trị cho biến tự động
