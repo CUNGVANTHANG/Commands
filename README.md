@@ -22,6 +22,7 @@
 | [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình
 
 ## Mục lục B
+
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
   - [1. Trích dẫn](#1-trích-dẫn)
   - [2. Biến](#2-biến)
