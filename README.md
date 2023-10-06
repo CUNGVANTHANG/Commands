@@ -26,6 +26,8 @@
   - [2. Biến](#2-biến)
   - [3. Các phép toán](#3-các-phép-toán)
 
+- [C. Các lệnh git](#c-các-lệnh-git)
+
 ## A. Các lệnh linux cơ bản
 [:arrow_up: Mục lục](#mục-lục)
 
@@ -669,7 +671,7 @@ Cú pháp:
 who
 ```
 
-## B. Các lệnh git cơ bản
+## B. Các lệnh linux nâng cao
 [:arrow_up: Mục lục](#mục-lục)
 ### 1. Trích dẫn
 [:arrow_up: Mục lục](#mục-lục)
@@ -895,3 +897,44 @@ expr 5 + 9/3
 | `expr1 -o expr2` | OR |
 | `!expr` | NOT |
 
+## C. Các lệnh git nâng cao
+[:arrow_up: Mục lục](#mục-lục)
+
+### 1. Cách khắc phục lỗi 
+[:arrow_up: Mục lục](#mục-lục)
+
+**1. Các khắc phục lỗi hỗ trợ xác thực mật khẩu bị xóa trên GitHub**
+
+Lỗi:
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/bbd6ceb8-f276-4fd6-9328-8e8f86536d32)
+
+Khắc phục:
+
+Bước 1: Vào **Settings/Developer Settings**
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/dc48d419-6bcc-4501-8f04-e20ca1ebc8c4)
+
+Bước 2: Chọn **Generate new token/Generate new token (classic)**
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/0da2ed88-b9cf-410b-afb2-7a6e00e3aad2)
+
+Bước 3: 
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/b416b44d-7f86-419d-9f29-baccd0675acb)
+
+Bước 4: Chọn tất cả, xong **Generate token**
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/86cf3884-1e0f-4914-869a-b6ec2d53bdf6)
+
+Bước 5: Gõ `git remote set-url origin https://<token>@github.com/<username>/<repositories>
+
+```
+git remote set-url origin https://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@github.com/CUNGVANTHANG/Commands
+```
+
+Bước 6:
+
+```
+git push origin main
+```
