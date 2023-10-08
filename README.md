@@ -8,8 +8,8 @@
 | [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) | Quyền quản trị | [31](#31-câu-lệnh-wc) | [`wc`](#31-câu-lệnh-wc) | Đếm |
 | [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | Thay đổi quyền | [32](#32-câu-lệnh-cal) | [`cal`](#32-câu-lệnh-cal) | Lịch |
 | [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu | [33](#33-câu-lệnh-who) | [`who`](#33-câu-lệnh-who) | Thông tin máy chủ |
-| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help |
-| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống |
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help | [34](#34-câu-lệnh-sed) | [`sed`](#34-câu-lệnh-sed) | Biến đổi trên dòng văn bản
+| [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống | [35](#35-câu-lệnh-awk) | [`awk`](#35-câu-lệnh-awk) | Xử lý và trích xuất dữ liệu từ file |
 | [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói |
 | [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
 | [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | Đóng chương trình |
@@ -24,10 +24,11 @@
 ## Mục lục B
 
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
-  - [1. Trích dẫn](#1-trích-dẫn)
-  - [2. Biến](#2-biến)
-  - [3. Các phép toán](#3-các-phép-toán)
-  - [4. Nhập dữ liệu từ bàn phím](#4-nhập-dữ-liệu-từ-bàn-phím)
+
+| STT | Đề mục | Nội dung |
+| :---: | :---: | :---: |
+| [1](#1-mẫu-siêu-ký-tự-hợp-pháp) | [Mẫu siêu ký tự hợp pháp](#1-mẫu-siêu-ký-tự-hợp-pháp) | Mẫu siêu ký tự hợp pháp |
+| [2](#2-trích-dẫn) | [Trích dẫn](#2-trích-dẫn) | Trích dẫn |
 
 ## Mục lục C
 - [C. Các lệnh git](#c-các-lệnh-git)
@@ -708,11 +709,42 @@ Cú pháp:
 who
 ```
 
-### 34.
+### 34.Câu lệnh sed
 [:arrow_up: Mục lục](#mục-lục-a)
 
 
-### 35.
+Cú pháp:
+
+```
+sed [options] edit-command [files]
+```
+
+Options:
+
+| Options | Ý nghĩa |
+| :---: | :---: |
+| `-e` | Cho phép đa hiệu đính |
+| `-f` | filename trước lệnh sed |
+| `-n` | Loại bỏ lối ra mặc định (Nên dùng) |
+
+**Mẫu siêu ký tự hợp pháp:**
+
+| Mẫu ký tự | Ý nghĩa |
+| :---: | :---: |
+| m,n`/d` | Xóa từ dòng m đến n |
+| `s/`m/n | Thay thế m thành n |
+| `/`m`/p` | In ra dòng văn bản nếu nó khớp mẫu |
+| `/`m/n`/g` | Thay thế toàn bộ m thành n
+| m`,`n`p` | In ra dòng văn bản từ m đến n |
+| `y/`abc/ABC`/` | Thay thế kí tự "a" thành "A", "b" thành "B", "c" thành "C"
+
+**Xóa ký tự khoảng trắng:**
+
+```
+sed 's/^[ \t]*//;s/[ \t]*$//' input.txt > output.txt
+```
+
+### 35. Câu lệnh awk
 [:arrow_up: Mục lục](#mục-lục-a)
 
 
@@ -765,7 +797,47 @@ tail -n +2 file_path.txt | head -n 4
 
 ## B. Các lệnh linux nâng cao
 [:arrow_up: Mục lục](#mục-lục-b)
-### 1. Trích dẫn
+
+### 1. Mẫu siêu ký tự hợp pháp
+[:arrow_up: Mục lục](#mục-lục-b)
+
+- `.` (Chấm): Đại diện cho bất kỳ ký tự nào (ngoại trừ ký tự xuống dòng)
+
+  - *Ví dụ:* `a.b` khớp với `"axb"`, `"ayb"`, `"azb"`, v.v.
+
+- `*`: Đại diện cho 0 hoặc nhiều lần lặp lại của ký tự hoặc nhóm ký tự trước đó.
+
+  - *Ví dụ:* `ab*` khớp với `"a"`, `"ab"`, `"abb"`,`"abbb"`, v.v.
+
+- `+`: Đại diện cho ít nhất một lần lặp lại của ký tự hoặc nhóm ký tự trước đó.
+
+  - *Ví dụ:* `ab+` khớp với `"ab"`, `"abb"`, `"abbb"`, v.v. nhưng không khớp với `"a"`.
+
+- `?`: Đại diện cho 0 hoặc 1 lần lặp lại của ký tự hoặc nhóm ký tự trước đó.
+
+  - *Ví dụ:* `ab?` khớp với `"a"` và `"ab"`, nhưng không khớp với `"abb"`.
+
+- `[]`: Được sử dụng để xác định một tập hợp các ký tự có thể khớp.
+
+  - *Ví dụ:* `[aeiou]` khớp với bất kỳ nguyên âm nào.
+
+- `[^]`: Được sử dụng để xác định một tập hợp các ký tự không được khớp.
+
+  - *Ví dụ:* `[^0-9]` khớp với bất kỳ ký tự nào không phải là số.
+
+- `|` (Dấu gạch ngang): Sử dụng để tạo sự kết hợp hoặc (OR) giữa các mẫu ký tự.
+
+  - *Ví dụ:* `apple|banana` khớp với `"apple"` hoặc `"banana"`.
+
+- `()` (Cặp ngoặc đơn): Sử dụng để nhóm các phần của mẫu ký tự lại với nhau.
+
+  - *Ví dụ:* `(abc)+` khớp với `"abc"`, `"abcabc"`, `"abcabcabc"`, v.v.
+
+- `^` (Caret) và `$` (Dollar): Được sử dụng để đặt điểm bắt đầu và kết thúc của một dòng.
+
+  - *Ví dụ:* `^abc` khớp với dòng bắt đầu bằng `"abc"`.
+
+### 2. Trích dẫn
 [:arrow_up: Mục lục](#mục-lục-b)
 
 | Siêu ký tự | Ý nghĩa |
@@ -828,7 +900,7 @@ $ echo "Hi $name, I'm glad to meet you!"
 Hi qtuan, I'm glad to meet you
 ```
 
-### 2. Biến
+### 3. Biến
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Các loại biến:
@@ -964,7 +1036,7 @@ echo $1 #peaches - Đã bị thay đổi giá trị $1 = $2
 echo $2 #plums - Đã bị thay đổi giá trị $2 = $3
 ```
 
-### 3. Các phép toán
+### 4. Các phép toán
 [:arrow_up: Mục lục](#mục-lục-b)
 
 **1. Các phép toán số học** 
@@ -1041,7 +1113,7 @@ echo $sum
 | `-z` | Kiểm tra chuỗi có độ dài bằng không |
 | `-n` | Kiểm tra chuỗi có độ dài khác không | 
 
-### 4. Nhập dữ liệu từ bàn phím
+### 5. Nhập dữ liệu từ bàn phím
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Cú pháp:
@@ -1062,7 +1134,8 @@ echo $file_path
 # Hello world
 ```
 
-### 5. if elif else
+### 6. if elif else
+[:arrow_up: Mục lục](#mục-lục-b)
 
 Cú pháp if, elif (else if), và else trong lập trình shell giúp bạn thực hiện các kiểm tra điều kiện và xử lý tương ứng dựa trên kết quả của các kiểm tra này
 
@@ -1096,6 +1169,385 @@ elif [ $score -ge 70 ]; then
 else
     echo "Điểm số là D"
 fi
+```
+
+### 7. case
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `case` trong lập trình shell được sử dụng để thực hiện một loạt kiểm tra điều kiện dựa trên một biểu thức và thực hiện các hành động tương ứng với mỗi trường hợp khớp. 
+
+Cú pháp:
+
+```
+case biểu_thức in
+    pattern1)
+        # Thực hiện hành động khi pattern1 khớp với biểu_thức
+        ;;
+    pattern2)
+        # Thực hiện hành động khi pattern2 khớp với biểu_thức
+        ;;
+    *)
+        # Thực hiện hành động mặc định khi không có pattern nào khớp
+        ;;
+esac
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+fruit="apple"
+
+case $fruit in
+    "apple")
+        echo "Đây là một quả táo."
+        ;;
+    "banana")
+        echo "Đây là một quả chuối."
+        ;;
+    "cherry")
+        echo "Đây là một quả cherry."
+        ;;
+    *)
+        echo "Không biết loại hoa quả này là gì."
+        ;;
+esac
+```
+
+### 8. select
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `select` trong lập trình shell được sử dụng để tạo một menu đơn giản cho người dùng chọn từ danh sách các tùy chọn.
+
+Cú pháp:
+
+```
+select variable in option1 option2 option3 ...
+do
+    # Thực hiện các hành động dựa trên tùy chọn được chọn
+done
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+PS3="Chọn một tùy chọn: "  # PS3 là biến dùng để hiển thị tiêu đề cho menu
+options=("Tùy chọn 1" "Tùy chọn 2" "Tùy chọn 3" "Thoát")
+
+select choice in "${options[@]}"
+do
+    case $choice in
+        "Tùy chọn 1")
+            echo "Bạn đã chọn Tùy chọn 1"
+            ;;
+        "Tùy chọn 2")
+            echo "Bạn đã chọn Tùy chọn 2"
+            ;;
+        "Tùy chọn 3")
+            echo "Bạn đã chọn Tùy chọn 3"
+            ;;
+        "Thoát")
+            break
+            ;;
+        *)
+            echo "Tùy chọn không hợp lệ"
+            ;;
+    esac
+done
+```
+
+### 9. for
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh for trong lập trình shell được sử dụng để lặp qua một danh sách các giá trị và thực hiện các hành động cho mỗi giá trị trong danh sách đó.
+
+Cú pháp:
+
+```
+for variable in danh_sach_gia_tri
+do
+    # Thực hiện các hành động dựa trên giá trị của biến
+done
+```
+
+*Ví dụ 1:*
+
+```
+#!/bin/bash
+
+fruits=("apple" "banana" "cherry" "date")
+
+for fruit in "${fruits[@]}"
+do
+    echo "Hoa quả: $fruit"
+done
+```
+
+*Ví dụ 2:*
+
+```
+#!/bin/bash
+
+for number in {1..5}
+do
+    echo "Số: $number"
+done
+```
+
+### 10. while
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `while` trong lập trình shell được sử dụng để tạo một vòng lặp và thực hiện các hành động trong vòng lặp khi một điều kiện cụ thể là đúng.
+
+Cú pháp:
+
+```
+while [ điều_kiện ]
+do
+    # Thực hiện các hành động trong vòng lặp
+done
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+count=1
+
+while [ $count -le 5 ]
+do
+    echo "Lần lặp thứ $count"
+    count=$((count + 1))
+done
+```
+
+### 11. until
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `until` trong lập trình shell được sử dụng để tạo một vòng lặp và thực hiện các hành động trong vòng lặp khi một điều kiện cụ thể là sai. Vòng lặp until sẽ tiếp tục chạy cho đến khi điều kiện trở thành đúng
+
+Cú pháp:
+
+```
+until [ điều_kiện ]
+do
+    # Thực hiện các hành động trong vòng lặp
+done
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+count=1
+
+until [ $count -ge 5 ]
+do
+    echo "Lần lặp thứ $count"
+    count=$((count + 1))
+done
+```
+
+### 12. break
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `break` trong lập trình shell được sử dụng để thoát khỏi một vòng lặp (loop) bất kỳ (ví dụ: for, while, until) ngay lập tức khi một điều kiện cụ thể được đáp ứng. Nó cho phép bạn dừng vòng lặp trước khi nó kết thúc tự động dựa trên điều kiện.
+
+Cú pháp:
+
+```
+break
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+count=1
+
+while [ $count -le 5 ]
+do
+    echo "Lần lặp thứ $count"
+    
+    if [ $count -eq 3 ]
+    then
+        break  # Thoát khỏi vòng lặp khi count đạt 3
+    fi
+
+    count=$((count + 1))
+done
+
+echo "Vòng lặp đã kết thúc."
+```
+
+Trong lập trình shell, lệnh `break` có thể kết hợp với một giá trị số nguyên `n` để thoát khỏi nhiều cấp độ vòng lặp. Khi bạn sử dụng `break n`, nó sẽ thoát khỏi `n` cấp độ vòng lặp bao gồm cả các vòng lặp lồng nhau.
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+for i in {1..3}
+do
+    echo "Vòng lặp ngoài i=$i"
+    for j in {1..3}
+    do
+        echo "   Vòng lặp trong j=$j"
+        if [ $i -eq 2 -a $j -eq 2 ]
+        then
+            break 2  # Thoát khỏi cả vòng lặp ngoài và vòng lặp trong
+        fi
+    done
+done
+```
+
+### 13. continue
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Lệnh `continue` trong lập trình shell được sử dụng để bỏ qua phần còn lại của vòng lặp hiện tại và tiếp tục vòng lặp từ đầu (ngay sau điểm kiểm tra điều kiện)
+
+Cú pháp:
+
+```
+continue
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+for i in {1..5}
+do
+    if [ $i -eq 3 ]
+    then
+        continue  # Bỏ qua lần lặp có giá trị 3 và tiếp tục vòng lặp
+    fi
+    echo "Lần lặp thứ $i"
+done
+```
+
+Trong lập trình shell, cú pháp `continue` có thể được kết hợp với một giá trị số nguyên n để chỉ định số lần lặp mà bạn muốn bỏ qua trong một vòng lặp. Khi bạn sử dụng `continue n`, nó sẽ bỏ qua `n` lần lặp gần nhất trong vòng lặp hiện tại và tiếp tục thực hiện từ lần lặp thứ `n+1`
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+for i in {1..5}
+do
+    if [ $i -eq 2 ]
+    then
+        continue 2  # Bỏ qua 2 lần lặp gần nhất và tiếp tục vòng lặp
+    fi
+    echo "Lần lặp thứ $i"
+done
+```
+
+### 14. Hàm
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Trong lập trình shell, bạn có thể tạo và sử dụng các hàm để thực hiện các tác vụ cụ thể hoặc tái sử dụng mã lệnh. Hàm trong shell thường được định nghĩa bằng từ khóa `function` hoặc chỉ định tên hàm và sử dụng dấu ngoặc tròn `{}` để bao bọc mã lệnh của hàm.
+
+Cú pháp:
+
+```
+function ten_ham {
+    # Mã lệnh của hàm ở đây
+}
+```
+
+hoặc
+
+```
+ten_ham() {
+    # Mã lệnh của hàm ở đây
+}
+```
+
+*Ví dụ 1:*
+
+```
+#!/bin/bash
+
+# Định nghĩa hàm say_hello
+say_hello() {
+    echo "Xin chào, $1!"  # Sử dụng tham số đầu vào $1
+}
+
+# Gọi hàm và truyền tham số "Alice"
+say_hello "Alice"
+```
+
+*Ví dụ 2:*
+
+
+```
+#!/bin/bash
+
+# Định nghĩa hàm add
+add() {
+    local result=$(( $1 + $2 ))  # Tạo biến cục bộ
+    echo $result
+}
+
+# Gọi hàm và lấy kết quả trả về
+result=$(add 5 3)
+echo "Tổng là: $result"
+```
+
+### 15. Mảng
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Trong lập trình shell, bạn có thể sử dụng mảng để lưu trữ nhiều giá trị trong một biến duy nhất. Mảng trong shell có thể chứa các chuỗi ký tự hoặc số nguyên và được đánh dấu bằng dấu ngoặc vuông `[]`
+
+Cú pháp: 
+
+```
+tên_mảng=(giá_trị1 giá_trị2 giá_trị3)
+```
+
+*Ví dụ 1:*
+
+```
+numbers=(1 2 3 4 5)
+fruits=("Apple" "Banana" "Orange")
+```
+
+*Ví dụ 2: Để truy cập các phần tử của mảng, bạn có thể sử dụng chỉ mục (index) bắt đầu từ 0* 
+
+```
+# Truy cập phần tử đầu tiên của mảng
+echo ${numbers[0]}   # Kết quả: 1
+
+# Truy cập phần tử thứ ba của mảng
+echo ${fruits[2]}    # Kết quả: Orange
+```
+
+*Ví dụ 3: Để lấy độ dài của mảng, bạn có thể sử dụng `${#mảng[@]}`*
+
+```
+# Lấy độ dài của mảng numbers
+length=${#numbers[@]}
+echo "Độ dài của mảng numbers là: $length"  # Kết quả: 5
+```
+
+*Ví dụ 4: Bạn cũng có thể sử dụng vòng lặp để lặp qua tất cả các phần tử của mảng.*
+
+```
+fruits=("Apple" "Banana" "Orange")
+
+# Sử dụng vòng lặp for để lặp qua mảng fruits
+for fruit in "${fruits[@]}"
+do
+    echo "Quả: $fruit"
+done
 ```
 
 ## C. Các lệnh git nâng cao
