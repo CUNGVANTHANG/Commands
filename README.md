@@ -14,7 +14,7 @@
 | [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
 | [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | Đóng chương trình |
 | [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | [24](#24-câu-lệnh-ping) | [`ping`](#24-câu-lệnh-ping) | Kiểm tra mạng |
-| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In stout + Lắng nghe | [25](#25-câu-lệnh-uname) | [`uname`](#25-câu-lệnh-uname) | Thông tin hệ thống |
+| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In n dòng cuối + Lắng nghe | [25](#25-câu-lệnh-uname) | [`uname`](#25-câu-lệnh-uname) | Thông tin hệ thống | [40](#40-câu-lệnh-head) | [`head`](#40-câu-lệnh-head) | In n dòng dầu |
 | [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | [26](#26-câu-lệnh-passwd) | [`passwd`](#26-câu-lệnh-passwd) | Đổi mật khẩu |
 | [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | [27](#27-câu-lệnh-top) | [`top`](#27-câu-lệnh-top) | Hiển thị tiến trình chạy |
 | [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | [28](#28-câu-lệnh-df) | [`df`](#28-câu-lệnh-df) | Hiển thị dung lượng |
@@ -151,11 +151,30 @@ Ví dụ:
 | `tail --help` | Xem các tham số của lệnh | 
 | `tail -f [tên_file]` | Xem sự thay đổi của file |
 
-*Ví dụ:*
+*Ví dụ 1:*
 
 `[số_dòng]` : `5`
 
 `[tên_file]` : `index.html`
+
+**Thường dùng để in ra nội dung bất kỳ với số thứ tự dòng bắt đầu và số lượng dòng in ra**
+
+*Ví dụ 2:* file_path.txt có nội dung như sau
+
+```
+21020939
+CVT
+21
+06
+2003
+K66K
+```
+
+Ta muốn in bắt dầu từ dòng 2, đến dòng 5 -> Tổng là 4 dòng được in ra
+
+```
+tail -n +2 file_path.txt | head -n 4
+```
 
 ### 11. Câu lệnh grep
 [:arrow_up: Mục lục](#mục-lục-a)
@@ -673,6 +692,61 @@ Cú pháp:
 
 ```
 who
+```
+
+### 34.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 35.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 36.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 37.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 38.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 39.
+[:arrow_up: Mục lục](#mục-lục-a)
+
+
+### 40. Câu lệnh head
+[:arrow_up: Mục lục](#mục-lục-a)
+
+Cú pháp:
+
+```
+head file_path # In ra stout
+head -3 file_path # In ra 3 dòng đầu
+head -n +2 file_path # In ra 2 dòng đầu
+head -n -2 file_path # In ra 2 dòng đầu và 2 dòng tiếp theo
+```
+
+**Thường dùng để in ra nội dung bất kỳ với số thứ tự dòng bắt đầu và số lượng dòng in ra**
+
+*Ví dụ:* file_path.txt có nội dung như sau
+
+```
+21020939
+CVT
+21
+06
+2003
+K66K
+```
+
+Ta muốn in bắt dầu từ dòng 2, đến dòng 5 -> Tổng là 4 dòng được in ra
+
+```
+tail -n +2 file_path.txt | head -n 4
 ```
 
 ## B. Các lệnh linux nâng cao
