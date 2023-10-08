@@ -27,7 +27,9 @@
   - [1. Trích dẫn](#1-trích-dẫn)
   - [2. Biến](#2-biến)
   - [3. Các phép toán](#3-các-phép-toán)
+  - [4. Nhập dữ liệu từ bàn phím](#4-nhập-dữ-liệu-từ-bàn-phím)
 
+## Mục lục C
 - [C. Các lệnh git](#c-các-lệnh-git)
 
 ## A. Các lệnh linux cơ bản
@@ -927,11 +929,60 @@ expr 5 + 9/3
 | `expr1 -o expr2` | OR |
 | `!expr` | NOT |
 
+**5. Phép toán kiểm tra file**
+
+| Phép toán | Ý nghĩa |
+| :---: | :---: |
+| `-r` | Kiểm tra file có quyền đọc |
+| `-w` | Kiểm tra file có quyền ghi |
+| `-x` | Kiểm tra file có quyền thực thi |
+| `-e` | Kiểm tra file có tồn tại |
+| `-s` | Kiểm tra file có rỗng |
+| `-f` | Kiểm tra đường dẫn có phải là file |
+| `-d` | Kiểm tra đường dẫn có phải là thư mực |
+| `-z` | Kiểm tra chuỗi có độ dài bằng không |
+| `-n` | Kiểm tra chuỗi có độ dài khác không | 
+
+### 4. Nhập dữ liệu từ bàn phím
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Cú pháp:
+
+```
+read file_path
+```
+
+Lấy dữ liệu ta sử dụng `$file_path`
+
+*Ví dụ:*
+
+```
+read file_path
+# Hello world
+
+echo $file_path
+# Hello world
+```
+
+### 5. if elif else
+
+Cú pháp:
+
+```
+if [Điều_kiện_1] then;
+  # Thực hiện các lệnh khi điều kiện 1 là đúng
+elif [Điều_kiện_2] then;
+  # Thực hiện các lệnh khi điều kiện 2 là đúng (tùy chọn)
+else
+  # Thực hiện các lệnh khi tất cả các điều kiện trên không đúng
+fi
+```
+
 ## C. Các lệnh git nâng cao
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-c)
 
 ### 1. Cách khắc phục lỗi 
-[:arrow_up: Mục lục](#mục-lục)
+[:arrow_up: Mục lục](#mục-lục-c)
 
 **1. Các khắc phục lỗi hỗ trợ xác thực mật khẩu bị xóa trên GitHub**
 
