@@ -188,6 +188,20 @@ In ra trên `stout`
 
 **Hello** World!
 
+**Cách options của `grep`**
+
+| Options | Ý nghĩa |
+| :---: | :---: |
+| `-b` | Đặt trước mỗi dòng số khối mà nó được tìm thấy. |
+| `-c` | Hiển thị số lượng các dòng phù hợp. | 
+| `-h` | Không hiển thị tên tệp. |
+| `-i` | Bỏ qua trường hợp so sánh các chữ cái |
+| `-l` | Liệt kê tên các tệp có dòng phù hợp được phân tách bằng các ký tự dòng mới |
+| `-n` | Đặt trước mỗi dòng số dòng tương đối của nó trong tệp. |
+| `-s` | Không hiển thị gì ngoại trừ thông báo lỗi. |
+| `-v` | Đảo ngược tìm kiếm để chỉ hiển thị các dòng không khớp. |
+| `-w` | Tìm kiếm biểu thức dưới dạng một từ, như thể được bao quanh bởi \ <và \> |
+
 - Tham khảo `grep` [tại đây](https://viblo.asia/p/tim-hieu-ve-lenh-grep-trong-linux-DZrGNNDdGVB)
 
 ### 12. Câu lệnh cp
