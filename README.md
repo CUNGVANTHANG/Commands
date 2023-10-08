@@ -900,6 +900,16 @@ expr 5 + 9/3
 # 8
 ```
 
+Tính toán thông qua biến:
+
+```
+number1 = 1
+number2 = 2
+sum=$((number1+number2))
+echo $sum
+# 3
+```
+
 **2. Phép toán kiểm tra xâu**
 
 | Phép toán | Ý nghĩa |
@@ -969,9 +979,11 @@ echo $file_path
 Cú pháp:
 
 ```
-if [Điều_kiện_1] then;
+# Lưu ý [ Phải có khoảng cách giữa 2 dấu đóng ]
+
+if [ Điều_kiện_1 ]; then     
   # Thực hiện các lệnh khi điều kiện 1 là đúng
-elif [Điều_kiện_2] then;
+elif [ Điều_kiện_2 ] ; then
   # Thực hiện các lệnh khi điều kiện 2 là đúng (tùy chọn)
 else
   # Thực hiện các lệnh khi tất cả các điều kiện trên không đúng
