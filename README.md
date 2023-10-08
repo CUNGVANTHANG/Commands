@@ -709,7 +709,7 @@ Cú pháp:
 who
 ```
 
-### 34.Câu lệnh sed
+### 34. Câu lệnh sed
 [:arrow_up: Mục lục](#mục-lục-a)
 
 
