@@ -1064,6 +1064,8 @@ echo $file_path
 
 ### 5. if elif else
 
+Cú pháp if, elif (else if), và else trong lập trình shell giúp bạn thực hiện các kiểm tra điều kiện và xử lý tương ứng dựa trên kết quả của các kiểm tra này
+
 Cú pháp:
 
 ```
@@ -1075,6 +1077,24 @@ elif [ Điều_kiện_2 ] ; then
   # Thực hiện các lệnh khi điều kiện 2 là đúng (tùy chọn)
 else
   # Thực hiện các lệnh khi tất cả các điều kiện trên không đúng
+fi
+```
+
+*Ví dụ:*
+
+```
+#!/bin/bash
+
+score=85
+
+if [ $score -ge 90 ]; then
+    echo "Điểm số là A"
+elif [ $score -ge 80 ]; then
+    echo "Điểm số là B"
+elif [ $score -ge 70 ]; then
+    echo "Điểm số là C"
+else
+    echo "Điểm số là D"
 fi
 ```
 
