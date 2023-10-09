@@ -943,33 +943,45 @@ Hủy biến:
 unset biến
 ```
 
-**Modify biến**
+**Modify biến - Phép toán String**
 
 *Ví dụ: `fruit` là 1 biến lưu giá trị `'peach'`, `apple` là 1 biến rỗng
 
 ```
-${variable:-word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
+${variable:-word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/e16b89af-a902-4e7b-89ac-8b35cc3a57be)
 
 ```
-${variable:=word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
+${variable:=word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/7209473d-8f44-4ff4-806f-e834d3c87f75)
 
 ```
-${variable:+word}    #Nếu biến không rỗng thì = word; nếu không thì rỗng.
+${variable:+word}          #Nếu biến không rỗng thì = word; nếu không thì rỗng.
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/5cb0d20c-1803-4769-af49-1b14b4e62514)
 
 ```
-${variable:?word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
+${variable:?word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/a8c1a761-1b06-410b-81d5-72f0d5aea2f4)
+
+```
+${variable:start:length}   #start là vị trí bắt đầu của chuỗi con cần trích xuất và length là độ dài của chuỗi con đó. 
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/f5e6f277-dd15-46cd-a57b-29577bea2160)
+
+```
+${variable:start}          #start là vị trí bắt đầu của chuỗi con cần trích xuất toàn bộ phần còn lại của biến từ vị trí đó.
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c8cf6a0b-57d3-4c61-97e5-77ba55f83f75)
 
 **3. Biến tự động**
 
