@@ -8,7 +8,7 @@
 | [1](#1-câu-lệnh-ls) | [`ls`](#1-câu-lệnh-ls) | Danh sách | [16](#16-câu-lệnh-sudo) | [`sudo`](#16-câu-lệnh-sudo) | Quyền quản trị | [31](#31-câu-lệnh-wc) | [`wc`](#31-câu-lệnh-wc) | Đếm |
 | [2](#2-câu-lệnh-pwd) | [`pwd`](#2-câu-lệnh-pwd) | Đường dẫn | [17](#17-câu-lệnh-chmod) | [`chmod`](#17-câu-lệnh-chmod) | Thay đổi quyền | [32](#32-câu-lệnh-cal) | [`cal`](#32-câu-lệnh-cal) | Lịch |
 | [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu | [33](#33-câu-lệnh-who) | [`who`](#33-câu-lệnh-who) | Thông tin máy chủ |
-| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help | [34](#34-câu-lệnh-sed) | [`sed`](#34-câu-lệnh-sed) | Biến đổi trên dòng văn bản
+| [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help | [34](#34-câu-lệnh-sed) | [`sed`](#34-câu-lệnh-sed) | Biến đổi trên dòng văn bản |
 | [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống | [35](#35-câu-lệnh-awk) | [`awk`](#35-câu-lệnh-awk) | Xử lý và trích xuất dữ liệu từ file |
 | [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói |
 | [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
@@ -709,7 +709,7 @@ Cú pháp:
 who
 ```
 
-### 34.Câu lệnh sed
+### 34. Câu lệnh sed
 [:arrow_up: Mục lục](#mục-lục-a)
 
 
@@ -943,33 +943,45 @@ Hủy biến:
 unset biến
 ```
 
-**Modify biến**
+**Modify biến - Phép toán String**
 
 *Ví dụ: `fruit` là 1 biến lưu giá trị `'peach'`, `apple` là 1 biến rỗng
 
 ```
-${variable:-word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
+${variable:-word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/e16b89af-a902-4e7b-89ac-8b35cc3a57be)
 
 ```
-${variable:=word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
+${variable:=word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/7209473d-8f44-4ff4-806f-e834d3c87f75)
 
 ```
-${variable:+word}    #Nếu biến không rỗng thì = word; nếu không thì rỗng.
+${variable:+word}          #Nếu biến không rỗng thì = word; nếu không thì rỗng.
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/5cb0d20c-1803-4769-af49-1b14b4e62514)
 
 ```
-${variable:?word}    #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
+${variable:?word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
 ```
 
 ![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/a8c1a761-1b06-410b-81d5-72f0d5aea2f4)
+
+```
+${variable:start:length}   #start là vị trí bắt đầu của chuỗi con cần trích xuất và length là độ dài của chuỗi con đó. 
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/f5e6f277-dd15-46cd-a57b-29577bea2160)
+
+```
+${variable:start}          #start là vị trí bắt đầu của chuỗi con cần trích xuất toàn bộ phần còn lại của biến từ vị trí đó.
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c8cf6a0b-57d3-4c61-97e5-77ba55f83f75)
 
 **3. Biến tự động**
 
