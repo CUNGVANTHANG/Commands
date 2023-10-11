@@ -25,10 +25,18 @@
 
 - [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
 
-| STT | Đề mục | Nội dung |
-| :---: | :---: | :---: |
-| [1](#1-mẫu-siêu-ký-tự-hợp-pháp) | [Mẫu siêu ký tự hợp pháp](#1-mẫu-siêu-ký-tự-hợp-pháp) | Mẫu siêu ký tự hợp pháp |
-| [2](#2-trích-dẫn) | [Trích dẫn](#2-trích-dẫn) | Trích dẫn |
+| STT | Đề mục | Nội dung | STT | Đề mục | Nội dung |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [1](#1-mẫu-siêu-ký-tự-hợp-pháp) | [Mẫu siêu ký tự hợp pháp](#1-mẫu-siêu-ký-tự-hợp-pháp) | Mẫu siêu ký tự hợp pháp | [11](#11-until) | [until](#11-until) | until |
+| [2](#2-trích-dẫn) | [Trích dẫn](#2-trích-dẫn) | Trích dẫn | [12](#12-break) | [break](#12-break) | break |
+| [3](#3-biến) | [Biến](#3-biến) | Biến môi trường, người dùng, tự động | [13](#13-continue) | [continue](#13-continue) | continue |
+| [4](#4-các-phép-toán) | [Các phép toán](#4-các-phép-toán) | Phép toán số học, string, kiểm tra xâu, số nguyên, logic, file | [14](#14-hàm) | [Hàm](#14-hàm) | function |
+| [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
+| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else |
+| [7](#7-case) | [case](#7-case) | case |
+| [8](#8-select) | [select](#8-select) | select |
+| [9](#9-for) | [for](#9-for) | for |
+| [10](#10-while) | [while](#10-while) | while |
 
 ## Mục lục C
 - [C. Các lệnh git](#c-các-lệnh-git)
@@ -201,7 +209,13 @@ In ra trên `stout`
 | `-n` | Đặt trước mỗi dòng số dòng tương đối của nó trong tệp. |
 | `-s` | Không hiển thị gì ngoại trừ thông báo lỗi. |
 | `-v` | Đảo ngược tìm kiếm để chỉ hiển thị các dòng không khớp. |
-| `-w` | Tìm kiếm biểu thức dưới dạng một từ, như thể được bao quanh bởi \ <và \> |
+| `-w` | Tìm kiếm biểu thức dưới dạng một từ, như thể được bao quanh bởi `\<` và `\>` |
+
+| Mẫu ký tự | Ý nghĩa |
+| :---: | :---: |
+| "n`$`" | In các hàng cuối là n |
+| "`^`H" | In các hàng bắt đầu với "H" |
+| "m`.*`n`$`| In các hàng vừa chứa m và hàng cuối là n |
 
 - Tham khảo `grep` [tại đây](https://viblo.asia/p/tim-hieu-ve-lenh-grep-trong-linux-DZrGNNDdGVB)
 
@@ -731,12 +745,17 @@ Options:
 
 | Mẫu ký tự | Ý nghĩa |
 | :---: | :---: |
-| m,n`/d` | Xóa từ dòng m đến n |
-| `s/`m/n | Thay thế m thành n |
-| `/`m`/p` | In ra dòng văn bản nếu nó khớp mẫu |
-| `/`m/n`/g` | Thay thế toàn bộ m thành n
-| m`,`n`p` | In ra dòng văn bản từ m đến n |
-| `y/`abc/ABC`/` | Thay thế kí tự "a" thành "A", "b" thành "B", "c" thành "C"
+| 'm,n`d`' | Xóa từ dòng m đến n |
+| '/Tên/`d`' | Xóa dòng chứa Tên |
+| '`s/`m/n/' | Thay thế m thành n |
+| '`s/`m/n/a' | Thay thế m xuất hiện lần thứ a trong hàng thành n |
+| '`/`m`/p`' | In ra dòng văn bản nếu nó khớp mẫu |
+| '`/`m/n`/g`' | Thay thế toàn bộ m thành n
+| 'm,n`p`' | In ra dòng văn bản từ m đến n |
+| '`y/`abc/ABC`/`' | Thay thế kí tự "a" thành "A", "b" thành "B", "c" thành "C" |
+| '`$a\`Nội_dung' | Thêm Nội_dung vào cuối file |
+| '`$d`' | Xóa dòng cuối của file |
+| '/`^`H/`p`' | In dòng bắt đầu bằng ký tự H |
 
 **Xóa ký tự khoảng trắng:**
 
@@ -746,6 +765,7 @@ sed 's/^[ \t]*//;s/[ \t]*$//' input.txt > output.txt
 
 ### 35. Câu lệnh awk
 [:arrow_up: Mục lục](#mục-lục-a)
+
 
 
 ### 36.
@@ -943,46 +963,6 @@ Hủy biến:
 unset biến
 ```
 
-**Modify biến - Phép toán String**
-
-*Ví dụ: `fruit` là 1 biến lưu giá trị `'peach'`, `apple` là 1 biến rỗng
-
-```
-${variable:-word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/e16b89af-a902-4e7b-89ac-8b35cc3a57be)
-
-```
-${variable:=word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/7209473d-8f44-4ff4-806f-e834d3c87f75)
-
-```
-${variable:+word}          #Nếu biến không rỗng thì = word; nếu không thì rỗng.
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/5cb0d20c-1803-4769-af49-1b14b4e62514)
-
-```
-${variable:?word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/a8c1a761-1b06-410b-81d5-72f0d5aea2f4)
-
-```
-${variable:start:length}   #start là vị trí bắt đầu của chuỗi con cần trích xuất và length là độ dài của chuỗi con đó. 
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/f5e6f277-dd15-46cd-a57b-29577bea2160)
-
-```
-${variable:start}          #start là vị trí bắt đầu của chuỗi con cần trích xuất toàn bộ phần còn lại của biến từ vị trí đó.
-```
-
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c8cf6a0b-57d3-4c61-97e5-77ba55f83f75)
-
 **3. Biến tự động**
 
 Là các biến do hệ thống tự động tạo ra. Biến tự động là biến chỉ đọc, tức là chúng ta chỉ được đọc giá trị của biến tự động và không được gán giá trị cho biến tự động
@@ -1051,7 +1031,8 @@ echo $2 #plums - Đã bị thay đổi giá trị $2 = $3
 ### 4. Các phép toán
 [:arrow_up: Mục lục](#mục-lục-b)
 
-**1. Các phép toán số học** 
+#### 4.1. Phép toán số học 
+[:arrow_up: Mục lục](#mục-lục-b)
 
 Bao gồm có: cộng (+), trừ (-), nhân (*), chia (/), mod (%)
 
@@ -1082,17 +1063,70 @@ echo $sum
 # 3
 ```
 
-**2. Phép toán kiểm tra xâu**
+#### 4.2. Phép toán string
+[:arrow_up: Mục lục](#mục-lục-b)
+
+| STT | Toán tử | Ý nghĩa |
+| :---: | :---: | :---: |
+| 1 | `${#word}` | Trả về độ dài chuỗi "word" |
+| 2 | `${variable:-word}` | Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word |
+| 3 | `${variable:=word}` | Nếu biến không rỗng thì = giá trị của nó; nếu không = word |
+| 4 | `${variable:+word}` | Nếu biến không rỗng thì = word; nếu không thì rỗng |
+| 5 | `${variable:?word}` | Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát | 
+| 6 | `${variable:start:length}` | start là vị trí bắt đầu của chuỗi con cần trích xuất và length là độ dài của chuỗi con đó |
+| 7 | `${variable:start}` | start là vị trí bắt đầu của chuỗi con cần trích xuất toàn bộ phần còn lại của biến từ vị trí đó |
+
+*Ví dụ: `fruit` là 1 biến lưu giá trị `'peach'`, `apple` là 1 biến rỗng*
+
+```
+${variable:-word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không, thay word
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/e16b89af-a902-4e7b-89ac-8b35cc3a57be)
+
+```
+${variable:=word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không = word
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/7209473d-8f44-4ff4-806f-e834d3c87f75)
+
+```
+${variable:+word}          #Nếu biến không rỗng thì = word; nếu không thì rỗng.
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/5cb0d20c-1803-4769-af49-1b14b4e62514)
+
+```
+${variable:?word}          #Nếu biến không rỗng thì = giá trị của nó; nếu không in ra và thoát
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/a8c1a761-1b06-410b-81d5-72f0d5aea2f4)
+
+```
+${variable:start:length}   #start là vị trí bắt đầu của chuỗi con cần trích xuất và length là độ dài của chuỗi con đó. 
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/f5e6f277-dd15-46cd-a57b-29577bea2160)
+
+```
+${variable:start}          #start là vị trí bắt đầu của chuỗi con cần trích xuất toàn bộ phần còn lại của biến từ vị trí đó.
+```
+
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c8cf6a0b-57d3-4c61-97e5-77ba55f83f75)
+
+#### 4.3. Phép toán kiểm tra xâu
+[:arrow_up: Mục lục](#mục-lục-b)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
-| `string1 = string2` | Xâu1 bằng xâu2 ( có khoảng tróng quang dấu =) |
+| `string1 = string2` | Xâu1 bằng xâu2 ( có khoảng trắng quanh dấu =) |
 | `stringl != string2` | Xâu1 khác xâu2 |
 | `string` | Xâu not null |
 | `-z string` | Độ dài xâu zero |
 | `-n string` | Độ dài xâu nonzero |
 
-**3. Phép toán kiểm tra số nguyên**
+#### 4.4. Phép toán kiểm tra số nguyên
+[:arrow_up: Mục lục](#mục-lục-b)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
@@ -1103,7 +1137,8 @@ echo $sum
 | `intl -lt int2` | intl < int2 |
 | `intl -le int2` | intl =< int2 |
 
-**4. Phép toán kiểm tra logic**
+#### 4.5. Phép toán kiểm tra logic
+[:arrow_up: Mục lục](#mục-lục-b)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
@@ -1111,7 +1146,8 @@ echo $sum
 | `expr1 -o expr2` | OR |
 | `!expr` | NOT |
 
-**5. Phép toán kiểm tra file**
+#### 4.6. Phép toán kiểm tra file
+[:arrow_up: Mục lục](#mục-lục-b)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
