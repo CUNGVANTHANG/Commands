@@ -766,7 +766,9 @@ sed 's/^[ \t]*//;s/[ \t]*$//' input.txt > output.txt
 ### 35. Câu lệnh awk
 [:arrow_up: Mục lục](#mục-lục-a)
 
-
+```
+awk 'pattern' filename
+```
 
 ### 36.
 [:arrow_up: Mục lục](#mục-lục-a)
@@ -1031,8 +1033,19 @@ echo $2 #plums - Đã bị thay đổi giá trị $2 = $3
 ### 4. Các phép toán
 [:arrow_up: Mục lục](#mục-lục-b)
 
+Bao gồm:
+
+- [4.1. Phép toán số học](#41-phép-toán-số-học)
+- [4.2. Phép toán string](#42-phép-toán-string)
+- [4.3. Phép toán kiểm tra xâu](#43-phép-toán-kiểm-tra-xâu)
+- [4.4. Phép toán kiểm tra số nguyên](#44-phép-toán-kiểm-tra-số-nguyên)
+- [4.5. Phép toán kiểm tra logic](#45-phép-toán-kiểm-tra-logic)
+- [4.6. Phép toán kiểm tra file](#46-phép-toán-kiểm-tra-file)
+
 #### 4.1. Phép toán số học 
 [:arrow_up: Mục lục](#mục-lục-b)
+
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
 
 Bao gồm có: cộng (+), trừ (-), nhân (*), chia (/), mod (%)
 
@@ -1065,6 +1078,8 @@ echo $sum
 
 #### 4.2. Phép toán string
 [:arrow_up: Mục lục](#mục-lục-b)
+
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
 
 | STT | Toán tử | Ý nghĩa |
 | :---: | :---: | :---: |
@@ -1117,6 +1132,8 @@ ${variable:start}          #start là vị trí bắt đầu của chuỗi con c
 #### 4.3. Phép toán kiểm tra xâu
 [:arrow_up: Mục lục](#mục-lục-b)
 
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
+
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
 | `string1 = string2` | Xâu1 bằng xâu2 ( có khoảng trắng quanh dấu =) |
@@ -1127,6 +1144,8 @@ ${variable:start}          #start là vị trí bắt đầu của chuỗi con c
 
 #### 4.4. Phép toán kiểm tra số nguyên
 [:arrow_up: Mục lục](#mục-lục-b)
+
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
@@ -1140,6 +1159,8 @@ ${variable:start}          #start là vị trí bắt đầu của chuỗi con c
 #### 4.5. Phép toán kiểm tra logic
 [:arrow_up: Mục lục](#mục-lục-b)
 
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
+
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
 | `exprl1 -a expr2` | AND |
@@ -1148,6 +1169,8 @@ ${variable:start}          #start là vị trí bắt đầu của chuỗi con c
 
 #### 4.6. Phép toán kiểm tra file
 [:arrow_up: Mục lục](#mục-lục-b)
+
+[:arrow_up_small: Các phép toán](#4-các-phép-toán)
 
 | Phép toán | Ý nghĩa |
 | :---: | :---: |
