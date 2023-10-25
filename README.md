@@ -10,7 +10,7 @@
 | [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu | [33](#33-câu-lệnh-who) | [`who`](#33-câu-lệnh-who) | Thông tin máy chủ |
 | [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help | [34](#34-câu-lệnh-sed) | [`sed`](#34-câu-lệnh-sed) | Biến đổi trên dòng văn bản |
 | [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống | [35](#35-câu-lệnh-awk) | [`awk`](#35-câu-lệnh-awk) | Xử lý và trích xuất dữ liệu từ file |
-| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói | [36](#36-câu-lệnh-cut) | [`cut`](#36-câu-lệnh-cut) | |
 | [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
 | [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | Đóng chương trình |
 | [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | [24](#24-câu-lệnh-ping) | [`ping`](#24-câu-lệnh-ping) | Kiểm tra mạng |
