@@ -32,7 +32,7 @@
 | [3](#3-biến) | [Biến](#3-biến) | Biến môi trường, người dùng, tự động | [13](#13-continue) | [continue](#13-continue) | continue |
 | [4](#4-các-phép-toán) | [Các phép toán](#4-các-phép-toán) | Phép toán số học, string, kiểm tra xâu, số nguyên, logic, file | [14](#14-hàm) | [Hàm](#14-hàm) | function |
 | [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
-| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-lập-trình-c) | [Lập trình C](#16-lập-trình-c) | Chạy chương trình, truyền đối số |
+| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-các-bước-chạy-1-chương-trình-c) | [Các bước chạy 1 chương trình C](#16-các-bước-chạy-1-chương-trình-c) | Chạy chương trình |
 | [7](#7-case) | [case](#7-case) | case |
 | [8](#8-select) | [select](#8-select) | select |
 | [9](#9-for) | [for](#9-for) | for |
@@ -1621,7 +1621,7 @@ do
 done
 ```
 
-### 16. Các bước chạy 1 chương trình C: `index.c`
+### 16. Các bước chạy 1 chương trình C
 [:arrow_up: Mục lục](#mục-lục-b)
 
 **Bước 1:** Cài môi trường C
@@ -1829,7 +1829,7 @@ int main() {
 
 Cả ba hàm này đều trả về 0 nếu thành công và -1 nếu có lỗi.
 
-### 19. `exit()`
+### 19. exit()
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Hàm `exit()` trong ngôn ngữ lập trình C được sử dụng để kết thúc chương trình. Khi chương trình gọi hàm `exit()`, quá trình thực thi chương trình sẽ kết thúc, và điều này thường xuyên đi kèm với việc giải phóng tất cả các tài nguyên đã cấp phát trong quá trình chạy chương trình.
@@ -1846,7 +1846,97 @@ void exit(int status);
 - Mã thoát 1: Lỗi tổ chức hoặc sử dụng
 - Mã thoát 2: Lỗi đối số dòng lệnh
 
+### 20. Thao tác trên file 
 
+1. Mở file
+
+```c
+#include <stdio.h>
+
+FILE *fopen(const char *filename, const char *mode);
+```
+
+Hàm `fopen` được sử dụng để mở một tệp tin. `filename` là tên của tệp tin và `mode` là chế độ mở tệp (ví dụ: `"r"` cho đọc, `"w"` cho ghi, `"a"` cho ghi ở cuối tệp, `"r+"` cho đọc và ghi, ...).
+
+*Ví dụ:*
+
+```c
+FILE *file;
+
+file = fopen("vidu.txt", "w");
+```
+
+2. Đóng file
+
+```c
+int fclose(FILE *stream);
+```
+
+*Ví dụ:*
+
+```c
+fclose(file);
+```
+
+3. Đọc từ tệp tin
+
+```c
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+```
+
+Hàm `fread` đọc dữ liệu từ tệp tin vào bộ đệm được chỉ định bởi con trỏ `ptr`. `size` là kích thước của mỗi phần tử để đọc, `nmemb` là số lượng các phần tử và `stream` là con trỏ đến `FILE`.
+
+*Ví dụ:*
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Mở tệp tin để đọc
+    FILE *file = fopen("example.txt", "rb");  // "rb" để mở tệp tin trong chế độ đọc nhị phân
+
+    if (file == NULL) {
+        perror("Không thể mở tệp tin");
+        return 1;
+    }
+
+    // Đọc dữ liệu từ tệp tin
+    char buffer[100];
+    size_t elements_read = fread(buffer, sizeof(char), sizeof(buffer), file);
+
+    // Kiểm tra xem fread có thành công hay không
+    if (elements_read > 0) {
+        printf("Dữ liệu đọc từ tệp tin: %s\n", buffer);
+    } else {
+        perror("Lỗi khi đọc tệp tin");
+    }
+
+    // Đóng tệp tin sau khi sử dụng
+    fclose(file);
+
+    return 0;
+}
+```
+
+4. Ghi vào tệp tin
+
+```c
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+```
+
+Hàm `fwrite` ghi dữ liệu từ bộ đệm được chỉ định bởi con trỏ `ptr` vào tệp tin. `size` là kích thước của mỗi phần tử để ghi, `nmemb` là số lượng các phần tử và `stream` là con trỏ đến `FILE`.
+
+5. Đọc/Ghi từ/đến Tệp Tin:
+
+```c
+int fscanf(FILE *stream, const char *format, ...);
+int fprintf(FILE *stream, const char *format, ...);
+```
+
+Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chúng hoạt động với tệp tin. `stream` là con trỏ đến `FILE`, và `format` là một chuỗi định dạng.
+
+
+[:arrow_up: Mục lục](#mục-lục-b)
 
 ## C. Các lệnh git nâng cao
 [:arrow_up: Mục lục](#mục-lục-c)
