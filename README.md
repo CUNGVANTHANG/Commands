@@ -1621,10 +1621,8 @@ do
 done
 ```
 
-### 16. Lập trình C
+### 16. Các bước chạy 1 chương trình C: `index.c`
 [:arrow_up: Mục lục](#mục-lục-b)
-
-- **Các bước chạy 1 chương trình C:** `index.c`
 
 **Bước 1:** Cài môi trường C
 
@@ -1652,11 +1650,12 @@ gcc -o index index.c
 ./index
 ```
 
-- **Truyền đối số với chương trình C:** `index.c`
+### 17. Truyền đối số với chương trình C: `index.c`
+[:arrow_up: Mục lục](#mục-lục-b)
 
 Nguyên mẫu của hàm `main` trong hầu hết các môi trường UNIX là:
 
-```
+```c
 int main(int argc, char *argv[], char *envp[]) {
 
     // Code
@@ -1700,6 +1699,153 @@ argv[4] = 4
 ```
 
 **Lưu ý:** `envp` thường không được sử dụng khi lập trình C thông thường
+
+### 18. Quản lý biến môi trường C
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Thuộc thư viện `<stdlib.h>`
+
+1. Hàm `getenv` dược sử dụng để lấy giá trị của một biến môi trường. Nó trả về con trỏ đến chuỗi chứa giá trị của biến môi trường hoặc `NULL` nếu biến không tồn tại.
+
+```c
+char *getenv(const char *name);
+```
+
+*Ví dụ:*
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    // Lấy giá trị của biến môi trường "PATH"
+    char *pathValue = getenv("PATH");
+
+    // Kiểm tra xem biến môi trường có tồn tại không
+    if (pathValue != NULL) {
+        printf("Giá trị của biến môi trường PATH: %s\n", pathValue);
+    } else {
+        printf("Biến môi trường PATH không tồn tại.\n");
+    }
+
+    return 0;
+}
+```
+
+2. Hàm `putenv` được sử dụng để đặt một biến môi trường mới hoặc cập nhật giá trị của một biến môi trường hiện tại.
+
+```c
+int putenv(char *str);
+```
+
+Tham số `str` là một con trỏ đến một chuỗi có dạng `"name=value"`. Hàm này thường không được khuyến khích sử dụng do không an toàn đối với quản lý bộ nhớ, và thay vào đó, setenv thường được ưa chuộng.
+
+*Ví dụ:*
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    // Hiển thị giá trị của biến môi trường "MY_VARIABLE" trước khi thay đổi
+    char* existingValue = getenv("MY_VARIABLE");
+    printf("Giá trị của MY_VARIABLE trước khi thay đổi: %s\n", existingValue ? existingValue : "Không tồn tại");
+
+    // Sử dụng putenv để đặt giá trị cho biến môi trường "MY_VARIABLE"
+    putenv("MY_VARIABLE=NewValue");
+
+    // Hiển thị giá trị của biến môi trường "MY_VARIABLE" sau khi thay đổi
+    char* newValue = getenv("MY_VARIABLE");
+    printf("Giá trị của MY_VARIABLE sau khi thay đổi: %s\n", newValue ? newValue : "Không tồn tại");
+
+    return 0;
+}
+```
+
+3. Hàm `setenv` được sử dụng để đặt giá trị cho một biến môi trường hoặc tạo một biến môi trường mới nếu nó chưa tồn tại. Tham số `name` là tên của biến môi trường, `value` là giá trị cần đặt, và `rewrite` là một số nguyên:
+
+```c
+int setenv(const char *name, const char *value, int rewrite);
+```
+
+- Nếu `rewrite` không bằng 0, hàm sẽ ghi đè giá trị của biến môi trường nếu nó đã tồn tại.
+- Nếu `rewrite` bằng 0, hàm sẽ không ghi đè giá trị nếu biến đã tồn tại.
+
+*Ví dụ:*
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    // Lấy giá trị của biến môi trường "MY_VARIABLE" trước khi thay đổi
+    char *existingValue = getenv("MY_VARIABLE");
+    printf("Giá trị của MY_VARIABLE trước khi thay đổi: %s\n", existingValue ? existingValue : "Không tồn tại");
+
+    // Sử dụng setenv để đặt giá trị cho biến môi trường "MY_VARIABLE"
+    int result = setenv("MY_VARIABLE", "NewValue", 1);
+
+    if (result == 0) {
+        printf("Giá trị của MY_VARIABLE sau khi thay đổi: %s\n", getenv("MY_VARIABLE"));
+    } else {
+        perror("setenv");
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+4. Hàm `unsetenv` được sử dụng để xóa một biến môi trường. Tham số `name` là tên của biến môi trường cần xóa.
+
+```c
+int unsetenv(const char *name);
+```
+
+*Ví dụ:*
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    // Lấy giá trị của biến môi trường "MY_VARIABLE" trước khi xóa
+    char *existingValue = getenv("MY_VARIABLE");
+    printf("Giá trị của MY_VARIABLE trước khi xóa: %s\n", existingValue ? existingValue : "Không tồn tại");
+
+    // Sử dụng unsetenv để xóa biến môi trường "MY_VARIABLE"
+    int result = unsetenv("MY_VARIABLE");
+
+    if (result == 0) {
+        printf("Biến môi trường MY_VARIABLE sau khi xóa: %s\n", getenv("MY_VARIABLE") ? getenv("MY_VARIABLE") : "Không tồn tại");
+    } else {
+        perror("unsetenv");
+        return 1;
+    }
+
+    return 0;
+}
+```
+
+Cả ba hàm này đều trả về 0 nếu thành công và -1 nếu có lỗi.
+
+### 19. `exit()`
+[:arrow_up: Mục lục](#mục-lục-b)
+
+Hàm `exit()` trong ngôn ngữ lập trình C được sử dụng để kết thúc chương trình. Khi chương trình gọi hàm `exit()`, quá trình thực thi chương trình sẽ kết thúc, và điều này thường xuyên đi kèm với việc giải phóng tất cả các tài nguyên đã cấp phát trong quá trình chạy chương trình.
+
+```c
+#include <stdlib.h>
+
+void exit(int status);
+```
+
+**status:**
+
+- Mã thoát 0: Thành công
+- Mã thoát 1: Lỗi tổ chức hoặc sử dụng
+- Mã thoát 2: Lỗi đối số dòng lệnh
+
 
 
 ## C. Các lệnh git nâng cao
