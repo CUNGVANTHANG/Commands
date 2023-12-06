@@ -32,7 +32,7 @@
 | [3](#3-biến) | [Biến](#3-biến) | Biến môi trường, người dùng, tự động | [13](#13-continue) | [continue](#13-continue) | continue |
 | [4](#4-các-phép-toán) | [Các phép toán](#4-các-phép-toán) | Phép toán số học, string, kiểm tra xâu, số nguyên, logic, file | [14](#14-hàm) | [Hàm](#14-hàm) | function |
 | [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
-| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else |
+| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-lập-trình-c) | [Lập trình C](#16-lập-trình-c) | Chạy chương trình, truyền đối số |
 | [7](#7-case) | [case](#7-case) | case |
 | [8](#8-select) | [select](#8-select) | select |
 | [9](#9-for) | [for](#9-for) | for |
@@ -1620,6 +1620,87 @@ do
     echo "Quả: $fruit"
 done
 ```
+
+### 16. Lập trình C
+[:arrow_up: Mục lục](#mục-lục-b)
+
+- **Các bước chạy 1 chương trình C:** `index.c`
+
+**Bước 1:** Cài môi trường C
+
+**Bước 2:** Sử dụng câu lệnh 
+
+```
+gcc -o [file_đích] [file_nguồn]
+```
+
+*Ví dụ:* 
+
+```
+gcc -o index index.c
+```
+
+**Bước 3:** Chạy chương trình
+
+```
+./[file_đích]
+```
+
+*Ví dụ:*
+
+```
+./index
+```
+
+- **Truyền đối số với chương trình C:** `index.c`
+
+Nguyên mẫu của hàm `main` trong hầu hết các môi trường UNIX là:
+
+```
+int main(int argc, char *argv[], char *envp[]) {
+
+    // Code
+
+}
+```
+
+Trong đó: 
+
+1. `argc` là số lượng tham số đầu vào
+2. `argv` là mảng của con trỏ chuỗi nhận tham số đầu vào
+3. `envp` là mảng của con trỏ chuỗi chứa thông tin môi trường của hệ thống
+
+```
+envp[0] = SHELL=/bin/bash
+envp[1] = SESSION_MANAGER=local/cvt-Nitro-AN515-57:@/tmp/.ICE-unix/2813,unix/cvt-Nitro-AN515-57:/tmp/.ICE-unix/2813
+envp[2] = QT_ACCESSIBILITY=1
+envp[3] = COLORTERM=truecolor
+envp[4] = XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+envp[5] = SSH_AGENT_LAUNCHER=openssh
+envp[6] = XDG_MENU_PREFIX=gnome-
+envp[7] = GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+envp[8] = GNOME_SHELL_SESSION_MODE=ubuntu
+envp[9] = SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+```
+
+*Ví dụ:*
+
+```
+./index 1 2 3 4
+```
+
+Số lượng tham số (`argc`) = 5 
+
+```
+argv[0] = ./index
+argv[1] = 1
+argv[2] = 2
+argv[3] = 3
+argv[4] = 4
+```
+
+**Lưu ý:** `envp` thường không được sử dụng khi lập trình C thông thường
+
 
 ## C. Các lệnh git nâng cao
 [:arrow_up: Mục lục](#mục-lục-c)
