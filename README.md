@@ -32,7 +32,7 @@
 | [3](#3-biến) | [Biến](#3-biến) | Biến môi trường, người dùng, tự động | [13](#13-continue) | [continue](#13-continue) | continue |
 | [4](#4-các-phép-toán) | [Các phép toán](#4-các-phép-toán) | Phép toán số học, string, kiểm tra xâu, số nguyên, logic, file | [14](#14-hàm) | [Hàm](#14-hàm) | function |
 | [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
-| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-các-bước-chạy-1-chương-trình-c) | [Các bước chạy 1 chương trình C](#16-các-bước-chạy-1-chương-trình-c) | Chạy chương trình |
+| [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-lập-trình-c) | [Lập trình C](#16-lập-trình-c) | Lập trình C |
 | [7](#7-case) | [case](#7-case) | case |
 | [8](#8-select) | [select](#8-select) | select |
 | [9](#9-for) | [for](#9-for) | for |
@@ -766,9 +766,126 @@ sed 's/^[ \t]*//;s/[ \t]*$//' input.txt > output.txt
 ### 35. Câu lệnh awk
 [:arrow_up: Mục lục](#mục-lục-a)
 
+Nếu có file `datafile` dữ liệu như này 
+
 ```
-awk 'pattern' filename
+John Doe 25
 ```
+
+```
+awk '{print $0 $1 $2}' datafile
+```
+
+Kết quả:
+
+- `$0`: Chứa toàn bộ văn bản
+- `$1`: Chứa văn bản trường đầu tiên
+- `$2`: Chứa văn bản trường thứ hai
+
+```
+John Doe 25John25
+```
+
+Nếu file `datafile` dữ liệu như này
+
+```
+John, Doe, 25
+```
+
+thì phải dùng `awk -F,`: ý nghĩa là phân tách trường dữ liệu
+
+```
+awk -F, '{print $0 $1 $2}' datafile
+```
+
+**Các cú pháp cơ bản của `awk`**
+
+1. Cú pháp Cơ Bản:
+
+```
+awk 'pattern { action }' filename
+```
+
+trong đó:
+
+- `pattern`: Điều kiện để chọn dòng dữ liệu.
+- `{ action }`: Hành động được thực hiện khi dòng dữ liệu thỏa mãn điều kiện.
+
+2. Biến và Các Toán Tử:
+
+```
+awk '{print $2, $1}' filename
+```
+
+trong đó:
+
+- `$0`: Toàn bộ dòng dữ liệu.
+- `$1`, `$2`, ...: Các trường trong dòng dữ liệu.
+- `NF`: Số trường trong dòng.
+- `$NF`: Trường cuối cùng trong dòng.
+
+3. Điều Kiện IF-ELSE:
+
+```
+awk '{if ($3 > 50) print "High"; else print "Low"}' filename
+```
+
+4. Vòng Lặp FOR:
+
+```
+awk '{for (i=1; i<=NF; i++) print $i}' filename
+```
+
+5. Cấu Trúc SWITCH-CASE
+
+```
+gawk '
+{
+    caseValue = $1;
+    switch (caseValue) {
+        case "value1": print "Option 1"; break;
+        case "value2": print "Option 2"; break;
+        case "value3": print "Option 3"; break;
+        default: print "Default Option";
+    }
+}' filename
+```
+
+6. BEGIN và END
+
+```
+awk 'BEGIN {
+    # Các hành động thực hiện trước khi xử lý dữ liệu
+}
+{
+    # Các hành động thực hiện trên mỗi dòng dữ liệu
+}
+END {
+    # Các hành động thực hiện sau khi hoàn thành xử lý dữ liệu
+}' filename
+```
+
+*Ví dụ:*
+
+```
+awk 'BEGIN {
+    print "Processing begins..."
+}
+{
+    total += $1  # Tính tổng giá trị trong cột đầu tiên
+}
+END {
+    print "Processing completed."
+    print "Total: " total
+}' data.txt
+
+```
+
+7. Các Hàm Sẵn Có:
+
+- `length(string)`: Trả về độ dài của chuỗi.
+- `index(string, substring)`: Trả về vị trí xuất hiện đầu tiên của chuỗi con trong chuỗi.
+- `split(string, array, separator)`: Chia chuỗi thành mảng sử dụng dấu phân tách.
 
 ### 36.
 [:arrow_up: Mục lục](#mục-lục-a)
@@ -1621,7 +1738,58 @@ do
 done
 ```
 
-### 16. Các bước chạy 1 chương trình C
+### 16. Lập trình C
+[:arrow_up: Mục lục](#mục-lục-b)
+
+**1. Thao tác trên file**
+
+| STT | Ý nghĩa| Cú pháp |
+| :--: | :---: | :---: |
+| 1 | Mở file | `FILE *fopen(const char *filename, const char *mode);` |
+| 2 | Đóng file | `int fclose(FILE *stream);` | 
+| 3 | Đọc dữ liệu từ file | `size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);` | 
+| 4 | Ghi dữ liệu từ file | `size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);` |
+| 5 | Đặt con trỏ vị trí trong file | `int fseek(FILE *stream, long offset, int whence);` |
+| 6 | Trả về vị trí hiện tại của con trỏ trong file | `long ftell(FILE *stream);` |
+| 7 | Đặt con trỏ vị trí ở đầu file | `void rewind(FILE *stream);` |
+| 8 | Ghi dữ liệu định dạng vào file | `int fprintf(FILE *stream, const char *format, ...);` |
+| 9 | Đọc dữ liệu định dạng từ file | `int fscanf(FILE *stream, const char *format, ...);` |
+| 10 | Đọc một dòng từ file | `char *fgets(char *s, int size, FILE *stream);` |
+| 11 | Đọc một ký tự từ file | `int fgetc(FILE *stream);` |
+| 12 | Ghi một dòng vào file | `int fputs(const char *s, FILE *stream);` |
+| 13 | Ghi một ký tự vào file | `int fputc(int character, FILE *stream);` |
+| 14 | Kiểm tra xem đã đọc đến cuối file chưa | `int feof(FILE *stream);` |
+| 15 | Xóa file | `int remove(const char *filename);` |
+| 16 | Đổi tên file | `int rename(const char *old_filename, const char *new_filename);` |
+
+**2. Các kiểu biến UNIX - POSIX**
+
+| STT | Ý nghĩa| Cú pháp |
+| :--: | :---: | :---: |
+| 1 | Đếm ticks clock (thời gian tiến trình) | `clock_t` |
+| 2 | ticks clock thu gọn not defined by POSIX.1; | `comp_t` | 
+| 3 | Số thiết bị (lớn và nhỏ) | `dev-t` |
+| 4 | Các tập mô tả file | `fd_set` |
+| 5 | Vị trí file | `fpos_t` |
+| 6 | Số group IDs | `gid_t` |
+| 7 | Số i-node | `ino_t` |
+| 8 | Loại file, mode tạo file | `mode_t` |
+| 9 | Đếm liên kết với thư mục | `nlink_t` |
+| 10 | Kích thước và độ trượt file(theo dấu ) | `off_t` |
+| 11 | IDs tiến trình và IDs tiến trình (signed) | `pid_t` |
+| 12 | thread IDs | `pthread_t` | 
+| 13 | Kết quả của phép trừ hai con trỏ (signed) | `ptrdiff_t` |
+| 14 | Các gới hạn tài nguyên | `rlim_t` |
+| 15 | Loại dữ liệu có thể được truy cập sâu | `sig_atomic_t` |
+| 16 | Tập báo hiệu | `sigset_t` |
+| 17 | Kích thước của objects (such as strings) | `size_t` | 
+| 18 | Hàm trả lại số byte được đếm (signed) | `ssize_t` |
+| 19 | Thời gian calendar tính đến giây | `time_t` | 
+| 20 | Số IDs gười dùng | `uid_t` |
+| 21 | Có thể biểu diễn tất cả các đặc tín riêng biệt | 
+`wchar_t` |
+
+### 17. Các bước chạy 1 chương trình C
 [:arrow_up: Mục lục](#mục-lục-b)
 
 **Bước 1:** Cài môi trường C
@@ -1650,7 +1818,7 @@ gcc -o index index.c
 ./index
 ```
 
-### 17. Truyền đối số với chương trình C: `index.c`
+### 18. Truyền đối số với chương trình C: `index.c`
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Nguyên mẫu của hàm `main` trong hầu hết các môi trường UNIX là:
@@ -1700,7 +1868,7 @@ argv[4] = 4
 
 **Lưu ý:** `envp` thường không được sử dụng khi lập trình C thông thường
 
-### 18. Quản lý biến môi trường C
+### 19. Quản lý biến môi trường C
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Thuộc thư viện `<stdlib.h>`
@@ -1829,7 +1997,7 @@ int main() {
 
 Cả ba hàm này đều trả về 0 nếu thành công và -1 nếu có lỗi.
 
-### 19. exit()
+### 20. exit()
 [:arrow_up: Mục lục](#mục-lục-b)
 
 Hàm `exit()` trong ngôn ngữ lập trình C được sử dụng để kết thúc chương trình. Khi chương trình gọi hàm `exit()`, quá trình thực thi chương trình sẽ kết thúc, và điều này thường xuyên đi kèm với việc giải phóng tất cả các tài nguyên đã cấp phát trong quá trình chạy chương trình.
@@ -1846,7 +2014,7 @@ void exit(int status);
 - Mã thoát 1: Lỗi tổ chức hoặc sử dụng
 - Mã thoát 2: Lỗi đối số dòng lệnh
 
-### 20. Thao tác trên file 
+### 21. Thao tác trên file 
 
 1. Mở file
 
