@@ -10,11 +10,11 @@
 | [3](#3-câu-lệnh-cd) | [`cd`](#3-câu-lệnh-cd) | Thay đổi | [18](#18-câu-lệnh-chown) | [`chown`](#18-câu-lệnh-chown) | Thay đổi sở hữu | [33](#33-câu-lệnh-who) | [`who`](#33-câu-lệnh-who) | Thông tin máy chủ |
 | [4](#4-câu-lệnh-clear) | [`clear`](#4-câu-lệnh-clear) | Clear stout | [19](#19-câu-lệnh-man) | [`man`](#19-câu-lệnh-man) | Help | [34](#34-câu-lệnh-sed) | [`sed`](#34-câu-lệnh-sed) | Biến đổi trên dòng văn bản |
 | [5](#5-câu-lệnh-mkdir) | [`mkdir`](#5-câu-lệnh-mkdir) | Tạo folder | [20](#20-câu-lệnh-wget) | [`wget`](#20-câu-lệnh-wget) | Tải xuống | [35](#35-câu-lệnh-awk) | [`awk`](#35-câu-lệnh-awk) | Xử lý và trích xuất dữ liệu từ file |
-| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói | [36](#36-câu-lệnh-cut) | [`cut`](#36-câu-lệnh-cut) | |
+| [6](#6-câu-lệnh-touch) | [`touch`](#6-câu-lệnh-touch) | Tạo file | [21](#21-câu-lệnh-apt) | [`apt`](#21-câu-lệnh-apt) | Gói | [36](#36-câu-lệnh-head) | [`head`](#36-câu-lệnh-head) | In ra n dòng đầu |
 | [7](#7-câu-lệnh-vi) | [`vi`](#7-câu-lệnh-vi) | Chế độ vim | [22](#22-câu-lệnh-ps) | [`ps`](#22-câu-lệnh-ps) | Lấy PID |
 | [8](#8-câu-lệnh-cat) | [`cat`](#8-câu-lệnh-cat) | Mở/Nối file | [23](#23-câu-lệnh-kill) | [`kill`](#23-câu-lệnh-kill) | Đóng chương trình |
 | [9](#9-câu-lệnh-echo) | [`echo`](#9-câu-lệnh-echo) | In stout | [24](#24-câu-lệnh-ping) | [`ping`](#24-câu-lệnh-ping) | Kiểm tra mạng |
-| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In n dòng cuối + Lắng nghe | [25](#25-câu-lệnh-uname) | [`uname`](#25-câu-lệnh-uname) | Thông tin hệ thống | [40](#40-câu-lệnh-head) | [`head`](#40-câu-lệnh-head) | In n dòng dầu |
+| [10](#10-câu-lệnh-tail) | [`tail`](#10-câu-lệnh-tail) | In n dòng cuối + Lắng nghe | [25](#25-câu-lệnh-uname) | [`uname`](#25-câu-lệnh-uname) | Thông tin hệ thống | 
 | [11](#11-câu-lệnh-grep) | [`grep`](#11-câu-lệnh-grep) | Tìm kiếm | [26](#26-câu-lệnh-passwd) | [`passwd`](#26-câu-lệnh-passwd) | Đổi mật khẩu |
 | [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | [27](#27-câu-lệnh-top) | [`top`](#27-câu-lệnh-top) | Hiển thị tiến trình chạy |
 | [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | [28](#28-câu-lệnh-df) | [`df`](#28-câu-lệnh-df) | Hiển thị dung lượng |
@@ -887,23 +887,7 @@ END {
 - `index(string, substring)`: Trả về vị trí xuất hiện đầu tiên của chuỗi con trong chuỗi.
 - `split(string, array, separator)`: Chia chuỗi thành mảng sử dụng dấu phân tách.
 
-### 36.
-[:arrow_up: Mục lục](#mục-lục-a)
-
-
-### 37.
-[:arrow_up: Mục lục](#mục-lục-a)
-
-
-### 38.
-[:arrow_up: Mục lục](#mục-lục-a)
-
-
-### 39.
-[:arrow_up: Mục lục](#mục-lục-a)
-
-
-### 40. Câu lệnh head
+### 36. Câu lệnh head
 [:arrow_up: Mục lục](#mục-lục-a)
 
 Cú pháp:
@@ -1786,8 +1770,7 @@ done
 | 18 | Hàm trả lại số byte được đếm (signed) | `ssize_t` |
 | 19 | Thời gian calendar tính đến giây | `time_t` | 
 | 20 | Số IDs gười dùng | `uid_t` |
-| 21 | Có thể biểu diễn tất cả các đặc tín riêng biệt | 
-`wchar_t` |
+| 21 | Có thể biểu diễn tất cả các đặc tín riêng biệt | `wchar_t` |
 
 ### 17. Các bước chạy 1 chương trình C
 [:arrow_up: Mục lục](#mục-lục-b)
@@ -2106,7 +2089,7 @@ Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chún
 
 [:arrow_up: Mục lục](#mục-lục-b)
 
-## C. Các lệnh git nâng cao
+## C. Các lệnh git 
 [:arrow_up: Mục lục](#mục-lục-c)
 
 ### 1. Cách khắc phục lỗi 
