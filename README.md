@@ -2096,16 +2096,17 @@ int fprintf(FILE *stream, const char *format, ...);
 
 Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chúng hoạt động với tệp tin. `stream` là con trỏ đến `FILE`, và `format` là một chuỗi định dạng.
 
-
-[:arrow_up: Mục lục](#mục-lục-b)
-
-## C. Các lệnh git 
+## C. Các lệnh git cơ bản và nâng cao
 [:arrow_up: Mục lục](#mục-lục-c)
 
-### 1. Cách khắc phục lỗi 
+### 1. `git add`
+
+### 2. `git status`
+
+### 9. Cách khắc phục một số lỗi 
 [:arrow_up: Mục lục](#mục-lục-c)
 
-**1. Các khắc phục lỗi hỗ trợ xác thực mật khẩu bị xóa trên GitHub**
+#### 1. Các khắc phục lỗi hỗ trợ xác thực mật khẩu bị xóa trên GitHub
 
 Lỗi:
 
