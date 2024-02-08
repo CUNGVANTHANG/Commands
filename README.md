@@ -1,7 +1,9 @@
 # Commands
-## Mục lục A
 
-- [A. Các lệnh Linux cơ bản](#a-các-lệnh-linux-cơ-bản)
+<details>
+  <summary>A. Các lệnh linux cơ bản và nâng cao</summary>
+  
+## Mục lục A
 
 | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng | STT | Câu lệnh | Tác dụng |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -19,11 +21,13 @@
 | [12](#12-câu-lệnh-cp) | [`cp`](#12-câu-lệnh-cp) | Copy folder/file | [27](#27-câu-lệnh-top) | [`top`](#27-câu-lệnh-top) | Hiển thị tiến trình chạy |
 | [13](#13-câu-lệnh-mv) | [`mv`](#13-câu-lệnh-mv) |  Di chuyển + Đổi tên | [28](#28-câu-lệnh-df) | [`df`](#28-câu-lệnh-df) | Hiển thị dung lượng |
 | [14](#14-câu-lệnh-rm) | [`rm`](#14-câu-lệnh-rm) | Xóa folder/file | [29](#29-câu-lệnh-free) | [`free`](#29-câu-lệnh-free) | Hiển thị RAM/SWAP |
-| [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình
+| [15](#15-câu-lệnh-rmdir) | [`rmdir`](#15-câu-lệnh-rmdir) | Xóa folder trống | [30](#30-câu-lệnh-pstree) | [`pstree`](#30-câu-lệnh-pstree) | Hiện thị cây tiến trình |
+</details>
 
-## Mục lục B
+<details>
+  <summary>B. Các lệnh và syntax trong lập trình Shell và C</summary>
 
-- [B. Các lệnh linux nâng cao](#b-các-lệnh-linux-nâng-cao)
+  ## Mục lục B
 
 | STT | Đề mục | Nội dung | STT | Đề mục | Nội dung |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -38,10 +42,16 @@
 | [9](#9-for) | [for](#9-for) | for |
 | [10](#10-while) | [while](#10-while) | while |
 
-## Mục lục C
-- [C. Các lệnh git](#c-các-lệnh-git)
+</details>
 
-## A. Các lệnh linux cơ bản
+<details>
+  <summary>C. Các lệnh git cơ bản và nâng cao</summary>
+
+  ## Mục lục C
+- [C. Các lệnh git](#c-các-lệnh-git)
+</details>
+
+## A. Các lệnh linux cơ bản và nâng cao
 [:arrow_up: Mục lục](#mục-lục-a)
 
 Tham khảo các lệnh linux phần 1 [tại đây](https://www.hostinger.com/tutorials/linux-commands)
@@ -918,7 +928,7 @@ Ta muốn in bắt dầu từ dòng 2, đến dòng 5 -> Tổng là 4 dòng đư
 tail -n +2 file_path.txt | head -n 4
 ```
 
-## B. Các lệnh linux nâng cao
+## B. Các lệnh và syntax trong lập trình Shell và C
 [:arrow_up: Mục lục](#mục-lục-b)
 
 ### 1. Mẫu siêu ký tự hợp pháp
