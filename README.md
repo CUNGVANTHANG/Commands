@@ -2099,11 +2099,27 @@ Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chún
 ## C. Các lệnh git cơ bản và nâng cao
 [:arrow_up: Mục lục](#mục-lục-c)
 
-### 1. `git add`
+### 1. Các lệnh git cơ bản và nâng cao
 
-### 2. `git status`
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c0d57440-e3dc-47fd-afd5-8103d65af17e)
 
-### 9. Cách khắc phục một số lỗi 
+![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/60358644-b4d5-49c7-84f3-05d6a53986de)
+
+| Câu lệnh | Ý nghĩa |
+| :-- | :-- |
+| `git -v` | Kiểm tra phiên bản của Git |
+| `git init` | Khởi tạo `.git` trong thư mục dự án của bạn |
+| `git clone https://github.com/...` | Nhân bản (clone) dự án từ kho lưu trữ từ xa (remote repository) về máy |
+| `git config --g user.name "Tên của bạn"` | Cài đặt thông tin cá nhân |
+| `git config --g user.email “Địa chỉ email của bạn” ` | Cài đặt thông tin cá nhân | 
+| `git config --list` | Kiểm tra thông tin người đang thực hiện thay đổi |
+| `git status` | Kiểm tra trạng thái (status) của kho lưu trữ (repository) |
+| `git add .` | Thêm (add) những thay đổi (bạn đã tạo mới hoặc chỉnh sửa) để thực hiện commit |
+| `git commit -m "Thông điệp của bạn"` | Ghi lại các thay đổi (change) vào kho lưu trữ (repository)  |
+| `git push` | Push (đẩy) tất cả mọi thay đổi (đã commit) lên remote repository |
+| `git push -u origin branch_mane` | Push (đẩy) branch vào remote repository |
+
+### 2. Cách khắc phục một số lỗi 
 [:arrow_up: Mục lục](#mục-lục-c)
 
 #### 1. Các khắc phục lỗi hỗ trợ xác thực mật khẩu bị xóa trên GitHub
