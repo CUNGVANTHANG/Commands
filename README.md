@@ -2118,6 +2118,10 @@ Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chún
 | `git commit -m "Thông điệp của bạn"` | Ghi lại các thay đổi (change) vào kho lưu trữ (repository)  |
 | `git push` | Push (đẩy) tất cả mọi thay đổi (đã commit) lên remote repository |
 | `git push -u origin branch_mane` | Push (đẩy) branch vào remote repository |
+| `git push -d origin branch_mane` | Xóa (delete) một branch trên remote repository | 
+| `git branch -M branch_name (main)` | Đổi tên nhánh chính |
+| `git branch` | Kiểm tra các nhánh hiện có của bạn ở local | 
+| `git branch -c branch_name` | Tạo một nhánh có tên "branch_name" và hợp nhất (merge) nó với nhánh chính. |
 
 ### 2. Cách khắc phục một số lỗi 
 [:arrow_up: Mục lục](#mục-lục-c)
