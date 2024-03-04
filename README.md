@@ -37,10 +37,15 @@
 | [4](#4-các-phép-toán) | [Các phép toán](#4-các-phép-toán) | Phép toán số học, string, kiểm tra xâu, số nguyên, logic, file | [14](#14-hàm) | [Hàm](#14-hàm) | function |
 | [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
 | [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-lập-trình-c) | [Lập trình C](#16-lập-trình-c) | Lập trình C |
-| [7](#7-case) | [case](#7-case) | case |
+| [7](#7-case) | [case](#7-case) | case | [17](#17-các-bước-chạy-1-chương-trình-c) | [Các bước chạy 1 chương trình C](#17-các-bước-chạy-1-chương-trình-c) | Các bước chạy 1 chương trình C |
 | [8](#8-select) | [select](#8-select) | select |
 | [9](#9-for) | [for](#9-for) | for |
 | [10](#10-while) | [while](#10-while) | while |
+
+| STT | Đề mục | Nội dung | 
+| :---: | :---: | :---: |
+| [21](#21-thao-tác-trên-file) | [Thao tác trên file](#21-thao-tác-trên-file) | Thao tác trên file |
+| [22](#22-lập-trình-lệnh) | [Lập trình lệnh](#lập-trình-lệnh) | Lập trình lệnh |
 
 </details>
 
@@ -2008,6 +2013,7 @@ void exit(int status);
 - Mã thoát 2: Lỗi đối số dòng lệnh
 
 ### 21. Thao tác trên file 
+[:arrow_up: Mục lục](#mục-lục-b)
 
 1. Mở file
 
@@ -2095,6 +2101,36 @@ int fprintf(FILE *stream, const char *format, ...);
 ```
 
 Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chúng hoạt động với tệp tin. `stream` là con trỏ đến `FILE`, và `format` là một chuỗi định dạng.
+
+### 22. Lập trình lệnh
+[:arrow_up: Mục lục](#mục-lục-b)
+
+_Ví dụ 1:_ Để tạo một câu lệnh tùy chỉnh như "intelliJ" để mở Visual Studio Code từ terminal, cần thực hiện các bước sau:
+
+**Bước 1:** Tạo file tên là `intelliJ`, xong đó truyền đường dẫn
+
+```
+#!/bin/bash
+/path/to/your/intellij/bin/idea.sh "$@"
+```
+
+**Bước 2:** Di chuyển file `intelliJ` đó tới /usr/local/bin
+
+```
+sudo mv intelliJ /usr/local/bin
+```
+
+và đừng quên cấp quyền
+
+```
+chmod +x intelliJ
+```
+
+**Kết quả:** Gõ `intelliJ` trên terminal sẽ tự động mở phần mềm IntelliJ
+
+```
+intelliJ
+```
 
 ## C. Các lệnh git cơ bản và nâng cao
 [:arrow_up: Mục lục](#mục-lục-c)
