@@ -53,7 +53,8 @@
   <summary>C. Các lệnh git cơ bản và nâng cao</summary>
 
   ## Mục lục C
-- [C. Các lệnh git](#c-các-lệnh-git)
+- [1. Các lệnh git cơ bản và nâng cao](#1-các-lệnh-git-cơ-bản-và-nâng-cao)
+- [2. Cách khắc phục một số lỗi](#2-cách-khắc-phục-một-số-lỗi)
 </details>
 
 ## A. Các lệnh linux cơ bản và nâng cao
@@ -2163,6 +2164,26 @@ intelliJ
 | `git branch -a` | Kiểm tra các branch hiện có trên remote repo của bạn. | 
 | `git checkout branch_name` | Lệnh trên giúp di chuyển không gian làm việc, kiểm tra tệp giữa các branch_name. |
 | `git fetch origin` | Xác nhận nội dung thay đổi trong branch của remote repository nhưng nội dung branch của local repository không bị thay đổi. | 
+| `git merge branch_name2` | Merge kết hợp nhánh hiện tại, với một nhánh được chỉ định (nhớ phải `git checkout branch_name1`: Nhánh nhận hợp nhất hoặc nhánh hiện tại) |
+| `git pull origin main` | Git pull kéo tất cả các thay đổi từ main về local |
+| `git pull` | Git pull kéo tất cả các thay đổi từ branch_name về local |
+| `git pull origin` | Git pull kéo tất cả các thay đổi từ kho lưu trữ từ xa vào branch bạn đang làm việc. (pull là sự kết hợp của 2 lệnh khác nhau: fetch và merge) |
+| `git pull --rebase` | Cách pull chống xung đột |
+| `git stash` | Lưu lại công việc đang làm ở branch này để chuyển sang branch khác (Khi bạn chưa muốn commit code) |
+| `git stash list` | Xem lại lịch sử thay đổi |
+| `git stash show stash@{n}` | Xem lại lịch sử thay đổi cụ thể của lần stash save{n}. |
+| `git stash clear` | Xoá toàn bộ stash |
+| `git rebase branch_name2` | Code từ branch_name2 được hợp nhất vào branch_name1 (nhớ phải `git checkout branch_name1`: Di chuyển về nhánh nhận sự hợp nhất) |
+| `git revert <commit_id>` | Lệnh này tạo commit đảo ngược commit có commit_id được chọn. | 
+| `git reset –hard <commit_id>` | Lệnh này xoá toàn bộ các commit trước đó, đưa branch về trạng thái của commit_id được chọn. | 
+| `git reset –soft <commit_id>` | Đưa branch về trạng thái của commit_id được chọn. Giữ nguyên tất cả thay đổi của file và các thay đổi ở stage. (Được khuyến khích sử dụng) |
+
+_Chú ý:_
+
+- Merge: Chỉ lấy nội dung commit cuối cùng của hai nhánh, tích hợp tạo thành commit mới. Các commit trước đó được giữ nguyên không thay đổi.
+- Rebase: Lấy code từ branch_name2, từ những commit ở branch_name2 tích hợp đồng thời tái tạo lại commit mới ở branch_name1 (Các commit đã tồn tại bị bỏ đi).
+
+
 
 ### 2. Cách khắc phục một số lỗi 
 [:arrow_up: Mục lục](#mục-lục-c)
