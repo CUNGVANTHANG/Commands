@@ -2138,9 +2138,9 @@ intelliJ
 
 ### 1. Các lệnh git cơ bản và nâng cao
 
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/c0d57440-e3dc-47fd-afd5-8103d65af17e)
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/c0d57440-e3dc-47fd-afd5-8103d65af17e" width="400px">
 
-![image](https://github.com/CUNGVANTHANG/Commands/assets/96326479/60358644-b4d5-49c7-84f3-05d6a53986de)
+<img src="https://github.com/CUNGVANTHANG/Commands/assets/96326479/60358644-b4d5-49c7-84f3-05d6a53986de" width="400px" >
 
 | Câu lệnh | Ý nghĩa |
 | :-- | :-- |
