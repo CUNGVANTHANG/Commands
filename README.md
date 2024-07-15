@@ -38,9 +38,9 @@
 | [5](#5-nhập-dữ-liệu-từ-bàn-phím) | [Nhập dữ liệu từ bàn phím](#5-nhập-dữ-liệu-từ-bàn-phím) | `read input` | [15](#15-mảng) | [Mảng](#15-mảng) | arrays |
 | [6](#6-if-elif-else) | [if, elif, else](#6-if-elif-else) | if, elif, else | [16](#16-lập-trình-c) | [Lập trình C](#16-lập-trình-c) | Lập trình C |
 | [7](#7-case) | [case](#7-case) | case | [17](#17-các-bước-chạy-1-chương-trình-c) | [Các bước chạy 1 chương trình C](#17-các-bước-chạy-1-chương-trình-c) | Các bước chạy 1 chương trình C |
-| [8](#8-select) | [select](#8-select) | select |
-| [9](#9-for) | [for](#9-for) | for |
-| [10](#10-while) | [while](#10-while) | while |
+| [8](#8-select) | [select](#8-select) | select | [18](#18-truyền-đối-số-với-chương-trình-c-indexc) | [Truyền đối số với chương trình C: `index.c`](#18-truyền-đối-số-với-chương-trình-c-indexc) | |
+| [9](#9-for) | [for](#9-for) | for | [19](#19-quản-lý-biến-môi-trường-c) | [19. Quản lý biến môi trường C](#19-quản-lý-biến-môi-trường-c) | |
+| [10](#10-while) | [while](#10-while) | while | [20](#20-exit) | [`exit()`](#20-exit) | |
 
 | STT | Đề mục | Nội dung | 
 | :---: | :---: | :---: |
@@ -2106,7 +2106,7 @@ Hàm `fscanf` và `fprintf` tương tự như `scanf` và `printf`, nhưng chún
 ### 22. Lập trình lệnh
 [:arrow_up: Mục lục](#mục-lục-b)
 
-_Ví dụ 1:_ Để tạo một câu lệnh tùy chỉnh như "intelliJ" để mở Visual Studio Code từ terminal, cần thực hiện các bước sau:
+_Ví dụ 1:_ Để tạo một câu lệnh tùy chỉnh như "intelliJ" để mở IntelliJ từ terminal, cần thực hiện các bước sau:
 
 **Bước 1:** Tạo file tên là `intelliJ`, xong đó truyền đường dẫn
 
@@ -2129,8 +2129,53 @@ chmod +x intelliJ
 
 **Kết quả:** Gõ `intelliJ` trên terminal sẽ tự động mở phần mềm IntelliJ
 
-```
+```shell
 intelliJ
+```
+
+_Ví dụ 2:_ Để tạo một câu lệnh tùy chỉnh như `xampp start` để khởi động xampp từ terminal thay vì phải thực hiện `sudo /opt/lampp/lampp start`, cần thực hiện các bước sau:
+
+**Bước 1:** Tạo script đặt trong `/usr/local/bin`
+
+```shell
+sudo vi /usr/local/bin/xampp
+```
+
+**Bước 2:** Thêm nội dung sau vào file
+
+```shell
+#!/bin/bash
+
+case "$1" in
+  start)
+    sudo /opt/lampp/lampp start
+    ;;
+  stop)
+    sudo /opt/lampp/lampp stop
+    ;;
+  restart)
+    sudo /opt/lampp/lampp restart
+    ;;
+  status)
+    sudo /opt/lampp/lampp status
+    ;;
+  *)
+    echo "Usage: xampp {start|stop|restart|status}"
+    exit 1
+    ;;
+esac
+```
+
+**Bước 3:** Cấp quyền thực thi
+
+```shell
+sudo chmod +x /usr/local/bin/xampp
+```
+
+**Bước 4:** Chạy bằng câu lệnh do ta đặt
+
+```shell
+xampp start
 ```
 
 ## C. Các lệnh git cơ bản và nâng cao
