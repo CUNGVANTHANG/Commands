@@ -2268,3 +2268,19 @@ Bước 6:
 ```
 git push origin main
 ```
+
+#### 2. Các khắc phục không .gitignore được
+
+[Tham khảo tại đây](https://stackoverflow.com/questions/45400361/why-is-gitignore-not-ignoring-my-files)
+
+Sử dụng câu lệnh để xóa khỏi kho lưu trữ các tệp được theo dõi
+
+```
+git rm -r --cached .
+```
+
+_Ví dụ:_
+
+```
+git rm -r --cached ./node_modules
+```
